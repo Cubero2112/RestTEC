@@ -1,0 +1,44 @@
+[
+  {
+    "Email": "Admin@a.com",
+    "ID": 101,
+    "Password": "123456",
+    "Roles": "Admin",
+    "UserName": "cubmontJCM"
+  },
+  {
+    "ID": 102,
+    "UserName": "chefsito",
+    "Password": "abcdef",
+    "Roles": "Chef",
+    "Email": "elFrances@a.com"
+  },
+  {
+    "ID": 103,
+    "UserName": "comelon64",
+    "Password": "Password@123",
+    "Roles": "Client",
+    "Email": "elObeso88@a.com"
+  },
+  {
+    "ID": 555,
+    "UserName": "JosueCubero",
+    "Password": "JCM1221roll.up",
+    "Roles": "Admin",
+    "Email": "josuecub.mont@a.com"
+  },
+  {
+    "ID": 100,
+    "UserName": "Apu13",
+    "Password": "ApuContra13",
+    "Roles": "Admin",
+    "Email": null
+  },
+  {
+    "ID": 112,
+    "UserName": "Cubero2112",
+    "Password": "josuemont1221",
+    "Roles": "Admin",
+    "Email": "josuecubmont@a.com"
+  }
+]
