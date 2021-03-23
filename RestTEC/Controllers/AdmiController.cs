@@ -24,5 +24,19 @@ namespace RestTEC.Controllers
 
             return Request.CreateResponse(HttpStatusCode.OK, platillos);
         }
+
+
+        [HttpPut]
+        [Route("actualizarPlatillo")]
+        public HttpResponseMessage ActualizarPlatillo([FromBody] Platillo platillo)
+        {
+
+            PlatilloLogic platilloBL = new PlatilloLogic();
+            platilloBL.Update(platillo);
+
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
     }
 }

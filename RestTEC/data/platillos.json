@@ -1,3 +1,26 @@
 [
-
+  {
+    "Calorias": 50.0,
+    "Codigo": 2,
+    "Descripcion": "Frijolitos",
+    "Feedback": "Es bueno",
+    "Nombre": "Frioles",
+    "NumeroVentas": 7,
+    "Precio": 50.0,
+    "Puntuacion": 10.0,
+    "TiempoPreparacion": 5.0,
+    "Tipo": "Harina"
+  },
+  {
+    "Codigo": 1,
+    "Nombre": "Arroz",
+    "Precio": 50.0,
+    "Descripcion": "Arrocito",
+    "Calorias": 100.0,
+    "Tipo": "Harina",
+    "Puntuacion": 10.0,
+    "NumeroVentas": 7,
+    "TiempoPreparacion": 5.0,
+    "Feedback": "Esta entero y sueltito"
+  }
 ]

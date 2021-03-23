@@ -50,7 +50,7 @@ namespace RestTEC.Models
             var oldPlatillo = Delete(actualPlatillo.Codigo);
             if (oldPlatillo != null)
             {
-                Insert(oldPlatillo);
+                Insert(actualPlatillo);
                 return oldPlatillo;
             }
             return null;
