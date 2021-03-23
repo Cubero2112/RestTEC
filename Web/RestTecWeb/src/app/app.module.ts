@@ -11,6 +11,7 @@ import { AsignarComponent } from './componentes/chef/asignar/asignar.component';
 import { ControlComponent } from './componentes/chef/control/control.component';
 import { MisPedidosComponent } from './componentes/chef/mis-pedidos/mis-pedidos.component';
 import { NavbarChefComponent } from './componentes/chef/navbar-chef/navbar-chef.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarChefComponent } from './componentes/chef/navbar-chef/navbar-chef.
     AsignarComponent,
     ControlComponent,
     MisPedidosComponent,
-    NavbarChefComponent
+    NavbarChefComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
