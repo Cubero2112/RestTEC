@@ -1,44 +1,16 @@
 [
   {
-    "Email": "Admin@a.com",
-    "ID": 101,
-    "Password": "123456",
+    "Email": "correoAdmi@a.com",
+    "ID": 1,
+    "Password": "contraDelAdmi",
     "Roles": "Admin",
-    "UserName": "cubmontJCM"
+    "UserName": "ApuElEmprendedor"
   },
   {
-    "ID": 102,
-    "UserName": "chefsito",
-    "Password": "abcdef",
+    "ID": 2,
+    "UserName": "chefsitoGusteau",
+    "Password": "cualquieraPuedeCocinar1234",
     "Roles": "Chef",
     "Email": "elFrances@a.com"
-  },
-  {
-    "ID": 103,
-    "UserName": "comelon64",
-    "Password": "Password@123",
-    "Roles": "Client",
-    "Email": "elObeso88@a.com"
-  },
-  {
-    "ID": 555,
-    "UserName": "JosueCubero",
-    "Password": "JCM1221roll.up",
-    "Roles": "Admin",
-    "Email": "josuecub.mont@a.com"
-  },
-  {
-    "ID": 100,
-    "UserName": "Apu13",
-    "Password": "ApuContra13",
-    "Roles": "Admin",
-    "Email": null
-  },
-  {
-    "ID": 112,
-    "UserName": "Cubero2112",
-    "Password": "josuemont1221",
-    "Roles": "Admin",
-    "Email": "josuecubmont@a.com"
   }
 ]

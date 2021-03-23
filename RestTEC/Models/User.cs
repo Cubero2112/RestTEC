@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json;
+using RestTEC.Authentication;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace RestTEC.Models
@@ -15,7 +17,6 @@ namespace RestTEC.Models
         public string Roles { get; set; }
         public string Email { get; set; }
     }
-
     public class UserBL
     {
 
@@ -46,6 +47,23 @@ namespace RestTEC.Models
             Serialize(usersList);
         }
 
+        public UserToken UserLogin(User userLogin)
+        {            
+            var userFound = UserValidate.GetUserDetails(userLogin.UserName, userLogin.Password);
+            if(userFound != null)
+            {
+                string encodeString = $"{userLogin.UserName}:{userLogin.Password}";
+                UserToken userToken = new UserToken()
+                {
+                    UserName = userFound.UserName,
+                    Role = userFound.Roles,
+                    Token = Convert.ToBase64String(Encoding.UTF8.GetBytes(encodeString))
+                };
+
+                return userToken;
+            }
+            return null;
+        }
         private void Serialize(List<User> usersList)
         {
 
@@ -61,6 +79,10 @@ namespace RestTEC.Models
             /* ------------------- Serialize Method -----------------------*/
         }
     }
-
-
+    public class UserToken
+    {
+        public string UserName { get; set; }
+        public string Token { get; set; }
+        public string Role { get; set; }
+    }
 }

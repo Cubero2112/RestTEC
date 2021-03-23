@@ -90,6 +90,7 @@
     <Compile Include="Authentication\UserValidate.cs" />
     <Compile Include="Controllers\AdmiController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
     <Compile Include="Controllers\UserRegistrationController.cs" />
     <Compile Include="Models\Cliente.cs" />
