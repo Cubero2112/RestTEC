@@ -12,5 +12,12 @@
     "Password": "cualquieraPuedeCocinar1234",
     "Roles": "Chef",
     "Email": "elFrances@a.com"
+  },
+  {
+    "ID": 3,
+    "UserName": "admin",
+    "Password": "admin1",
+    "Roles": "admin",
+    "Email": "admin@test.com"
   }
 ]

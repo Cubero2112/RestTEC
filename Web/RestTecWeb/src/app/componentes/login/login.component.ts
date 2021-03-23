@@ -29,6 +29,13 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
 
+  	if(localStorage.getItem("rol") == "admin"){
+  		this.router.navigate(['admin/menu']);
+  	}
+  	else if(localStorage.getItem("rol") == "chef"){
+  		alert("Es un chef");
+  	}
+
     }
 
 
@@ -36,7 +43,10 @@ export class LoginComponent implements OnInit {
     this.loginApi.verficar(this.datosUsuario)
     .subscribe((response:UsuarioInterface)=>
       {
-        alert(response.Token + "\n" + response.Role);
+      	alert("admitido");
+        localStorage.setItem("rol", response.Role);
+        localStorage.setItem("user", response.Token);
+        
       });
     }
 

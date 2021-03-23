@@ -1,8 +1,8 @@
 export interface UsuarioInterface{
-	Email?: String,
-	ID?: Number,
-	Password?: String,
-	Role?: String,
-	Username?: String,
-	Token?: String,
+	Email?: string,
+	ID?: number,
+	Password?: string,
+	Role?: string,
+	Username?: string,
+	Token?: string,
 }

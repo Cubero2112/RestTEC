@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace RestTEC.Controllers
 {
@@ -12,6 +13,7 @@ namespace RestTEC.Controllers
     {
         [HttpPost]
         [Route("Login")]
+        [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
         public HttpResponseMessage Login([FromBody] User loginUser)
         {
             UserBL userBL = new UserBL();
