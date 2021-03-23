@@ -6,6 +6,7 @@ import {UsuarioInterface} from "src/app/interfaces/usuario-interface";
 
 import {LoginService} from "src/app/services/login.service";
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,6 +15,7 @@ import {LoginService} from "src/app/services/login.service";
 export class LoginComponent implements OnInit {
 
   constructor(public router : Router, public loginApi:LoginService) { }
+
 
 
   public datosUsuario:UsuarioInterface = {
@@ -29,25 +31,27 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
 
-  	if(localStorage.getItem("rol") == "admin"){
-  		this.router.navigate(['admin/menu']);
-  	}
-  	else if(localStorage.getItem("rol") == "chef"){
-  		alert("Es un chef");
-  	}
-
-    }
-
+  }
 
   verificarCredenciales():void{
     this.loginApi.verficar(this.datosUsuario)
     .subscribe((response:UsuarioInterface)=>
       {
-      	alert("admitido");
         localStorage.setItem("rol", response.Role);
         localStorage.setItem("user", response.Token);
-        
+        this.verficarRol();
       });
+
+  }
+
+  verficarRol():void{
+    if(localStorage.getItem("rol") == "admin"){
+      this.router.navigate(['admin/platos']);
     }
+    else if(localStorage.getItem("rol") == "chef"){
+      alert("Es un chef");
+    }
+  }
+  
 
 }

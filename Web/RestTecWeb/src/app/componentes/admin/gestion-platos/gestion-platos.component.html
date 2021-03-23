@@ -1,1 +1,43 @@
-<p>gestion-platos works!</p>
+<app-navbar-admin></app-navbar-admin>
+
+<div class="container mt-3">
+	<table id="platosTable" border="1" class="table table-bordered table-lg">
+		<thead class="thead-light text-center">
+			<tr>
+				<th>Nombre</th>
+				<th>Precio</th>
+				<th>Calorías</th>
+				<th>Tipo</th>
+				<th>Acciones</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let plato of platillos; let i = index" class="text-center">
+				<td>{{plato.Nombre}}</td>
+				<td>{{plato.Precio}}</td>
+				<td>{{plato.Calorias}}</td>
+				<td>{{plato.Tipo}}</td>	
+				<td> 
+					<a class="btn btn-light" (click) = "preActualizar(plato)" data-toggle = "modal" data-target ="#modalPlatillos"> Editar </a> 
+					<a (click) = "eliminarPlato(plato)" class="btn btn-danger ml-4"> Eliminar </a> 
+				</td>			
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="container mt-3 align-self-center">
+		<div>
+			<form class="form-horizontal">		
+
+				<div class="form-group">
+					<div class="col-sm-10">
+						<button type="submit" class="btn btn-success" data-toggle = "modal" data-target = #modalPlatillos (click)="limpiarForm()">
+							Crear nuevo
+						</button>
+					</div>
+
+				</div>
+			</form>
+		</div>
+</div>
+<app-modal-platos></app-modal-platos>

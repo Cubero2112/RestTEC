@@ -15,6 +15,7 @@ import { ControlComponent } from './componentes/chef/control/control.component';
 import { MisPedidosComponent } from './componentes/chef/mis-pedidos/mis-pedidos.component';
 import { NavbarChefComponent } from './componentes/chef/navbar-chef/navbar-chef.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { ModalPlatosComponent } from './componentes/admin/modal-platos/modal-platos.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginComponent } from './componentes/login/login.component';
     ControlComponent,
     MisPedidosComponent,
     NavbarChefComponent,
-    LoginComponent
+    LoginComponent,
+    ModalPlatosComponent
   ],
   imports: [
     BrowserModule,
