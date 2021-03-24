@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {PlatillosService} from "src/app/services/platillos.service";
 import {PlatilloInterface} from "src/app/interfaces/platillos-interface";
 import {Location} from "@angular/common";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-gestion-platos',
@@ -11,14 +12,19 @@ import {Location} from "@angular/common";
 })
 export class GestionPlatosComponent implements OnInit {
 
-  constructor(private dataApi: PlatillosService) { }
+  constructor(public router : Router, private dataApi: PlatillosService) { }
 
   public platillos: PlatilloInterface;
   private Location: Location;
 
   ngOnInit(): void {
+    if(localStorage.getItem("rol") == "admin"){
+      this.obtenerPlatosServidor();
+    }
+    else{
+      this.router.navigate([""]);
+    }
 
-  	this.obtenerPlatosServidor();
   }
 
   obtenerPlatosServidor():void{

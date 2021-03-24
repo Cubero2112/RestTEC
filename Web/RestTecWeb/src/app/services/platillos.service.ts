@@ -9,11 +9,11 @@ import {NgForm} from "@angular/forms";
   providedIn: 'root'
 })
 export class PlatillosService {
-constructor(private http:HttpClient) { }
+constructor( private http:HttpClient) { }
 
   headers: HttpHeaders = new HttpHeaders({
   	"Content-Type" : "application/json",
-  	Authorization: "BASIC QXB1MTM6QXB1Q29udHJhMTM="
+  	Authorization: "BASIC " + localStorage.getItem("user")
   });
 
 

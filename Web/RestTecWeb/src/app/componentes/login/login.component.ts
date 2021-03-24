@@ -31,6 +31,18 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
 
+
+
+    if(localStorage.getItem("user") != null ){
+      if(localStorage.getItem("rol") =="admin"){
+        this.router.navigate(["admin/platos"]);
+      }
+      
+      else if(localStorage.getItem("rol") == "chef"){
+        this.router.navigate(["chef"]);
+      }
+    }
+
   }
 
   verificarCredenciales():void{

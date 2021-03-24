@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Security;
 
 namespace RestTEC.Controllers
@@ -13,6 +14,7 @@ namespace RestTEC.Controllers
 
     [BasicAuthentication]
     [MyAuthorize(Roles = "Admin")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class AdmiController : ApiController
     {
         [HttpGet]
@@ -34,6 +36,28 @@ namespace RestTEC.Controllers
             PlatilloLogic platilloBL = new PlatilloLogic();
             platilloBL.Update(platillo);
 
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpPut]
+        [Route("eliminarPlatillo")]
+        public HttpResponseMessage EliminarPlatillo([FromBody] Platillo platillo)
+        {
+
+            PlatilloLogic platilloBL = new PlatilloLogic();
+            platilloBL.Delete(platillo.Codigo);
+
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpPost]
+        [Route("insertPlatillo")]
+        public HttpResponseMessage InsertPlatillo([FromBody] Platillo platillo)
+        {
+            PlatilloLogic platilloBL = new PlatilloLogic();
+            platilloBL.Insert(platillo);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
