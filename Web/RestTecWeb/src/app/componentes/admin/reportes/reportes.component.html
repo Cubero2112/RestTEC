@@ -1,1 +1,35 @@
-<p>reportes works!</p>
+<app-navbar-admin></app-navbar-admin>
+<div class="container mt-3">
+	<table id="reportesTable" border="1" class="table table-bordered table-sm">
+		<thead class="thead-light text-center">
+			<tr>
+				<th>{{encabezado_1}}</th>
+				<th>{{encabezado_2}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let dato of datosAMostrar; let i = index" class="text-center">
+				<td>{{dato.nombre}}</td>
+				<td>{{dato.valor}}</td>			
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="container mt-3 align-self-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+				<button class="btn btn-light" (click)="cargarVendidos()">Platos más vendidos</button> 
+			</div>
+			<div class="col-sm">
+				<button class="btn btn-light" (click)="cargarGanancias()">Platos más ganancias</button> 
+			</div>
+			<div class="col-sm">
+				<button class="btn btn-light" (click)="cargarFeedback()">Platos mejor feedback</button> 
+			</div>
+			<div class="col-sm">
+				<button class="btn btn-light" (click)="cargarUsuarios()">Usuarios más ordenes</button> 
+			</div>
+		</div>
+	</div>
+</div>

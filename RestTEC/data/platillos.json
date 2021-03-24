@@ -1,1 +1,134 @@
-[{"Codigo":2,"Nombre":"Frioles","Precio":50.0,"Descripcion":"Frijolitos","Calorias":50.0,"Tipo":"Harina","Puntuacion":10.0,"NumeroVentas":7,"TiempoPreparacion":5.0,"Feedback":"Es bueno"}]
+[
+  {
+    "Codigo": 0,
+    "Nombre": "Ensalada",
+    "Precio": 590.0,
+    "Descripcion": "Hola soy una ensalada",
+    "Calorias": 100.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 1,
+    "TiempoPreparacion": 5.0,
+    "Feedback": 9
+  },
+  {
+    "Codigo": 1,
+    "Nombre": "Frijoles",
+    "Precio": 500.0,
+    "Descripcion": "Frijolitos",
+    "Calorias": 50.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 15,
+    "TiempoPreparacion": 5.0,
+    "Feedback": 6
+  },
+  {
+    "Codigo": 2,
+    "Nombre": "Arroz",
+    "Precio": 250.0,
+    "Descripcion": "Cubero Gay",
+    "Calorias": 50.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 13,
+    "TiempoPreparacion": 100.0,
+    "Feedback": 1
+  },
+  {
+    "Codigo": 3,
+    "Nombre": "Lasagna",
+    "Precio": 700.0,
+    "Descripcion": "asdafasfdafd",
+    "Calorias": 50.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 3,
+    "TiempoPreparacion": 5.0,
+    "Feedback": 2
+  },
+  {
+    "Codigo": 4,
+    "Nombre": "Macarrones",
+    "Precio": 900.0,
+    "Descripcion": "asdasfasfas",
+    "Calorias": 10.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 2,
+    "TiempoPreparacion": 0.0,
+    "Feedback": 32
+  },
+  {
+    "Codigo": 5,
+    "Nombre": "Pollo",
+    "Precio": 600.0,
+    "Descripcion": "asdasfasfasdf",
+    "Calorias": 80.0,
+    "Tipo": "Carne",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 8,
+    "TiempoPreparacion": 4.0,
+    "Feedback": 12.2
+  },
+  {
+    "Codigo": 6,
+    "Nombre": "Pinto",
+    "Precio": 300.0,
+    "Descripcion": "Pinto xd",
+    "Calorias": 40.0,
+    "Tipo": "Carne",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 11,
+    "TiempoPreparacion": 1.0,
+    "Feedback": 6.6
+  },
+  {
+    "Codigo": 7,
+    "Nombre": "Huevo",
+    "Precio": 100.0,
+    "Descripcion": "123asda",
+    "Calorias": 123.0,
+    "Tipo": "Carne",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 6,
+    "TiempoPreparacion": 3123.0,
+    "Feedback": 98
+  },
+  {
+    "Codigo": 8,
+    "Nombre": "Chorizo",
+    "Precio": 900.0,
+    "Descripcion": "123123123",
+    "Calorias": 123123.0,
+    "Tipo": "Carne",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 4,
+    "TiempoPreparacion": 12312312.0,
+    "Feedback": 12
+  },
+  {
+    "Codigo": 9,
+    "Nombre": "Frutas",
+    "Precio": 350.0,
+    "Descripcion": "sadsadasdasd",
+    "Calorias": 213.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 10,
+    "TiempoPreparacion": 3123.0,
+    "Feedback": 12
+  },
+  {
+    "Calorias": 123.0,
+    "Codigo": 10,
+    "Descripcion": "123qwd",
+    "Feedback": 3,
+    "Nombre": "Sandwich",
+    "NumeroVentas": 12,
+    "Precio": 650.0,
+    "Puntuacion": 0.0,
+    "TiempoPreparacion": 123.0,
+    "Tipo": "Harina"
+  }
+]

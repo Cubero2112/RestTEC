@@ -8,5 +8,5 @@ export interface PlatilloInterface{
 	Puntuacion?: Number,
 	NumeroVentas?: Number,
 	TiempoPreparacion?: Number,
-	Feedback?: String,
+	Feedback?: Number
 }

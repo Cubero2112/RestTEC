@@ -18,7 +18,7 @@ namespace RestTEC.Models
         public double Puntuacion { get; set; }
         public int NumeroVentas { get; set; }
         public double TiempoPreparacion { get; set; }
-        public string Feedback { get; set; }
+        public double Feedback { get; set; }
     }
 
     public class PlatilloLogic
@@ -33,7 +33,7 @@ namespace RestTEC.Models
             Serialize(platilloList); //Almacenamos la ultima version de la base de datos
             /* ------------------- Post/insert Method -----------------------*/
         }
-        public IEnumerable<Platillo> GetAll()           //(R) GET
+        public List<Platillo> GetAll()           //(R) GET
         {
             //logic to return all employees
             return DataSource();
