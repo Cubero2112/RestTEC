@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Security;
+using static RestTEC.Models.Reporte;
 
 namespace RestTEC.Controllers
 {   //localhost:97234/Admi/getPlatillos
@@ -36,6 +37,17 @@ namespace RestTEC.Controllers
 
 
             return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        [HttpGet]
+        [Route("getReporte")]
+        public HttpResponseMessage GetReporte()
+        {
+
+            ReporteLogic reporteBL = new ReporteLogic();
+            Reporte reporte = reporteBL.GetReporte();
+            
+            return Request.CreateResponse(HttpStatusCode.OK, reporte);
         }
 
     }
