@@ -92,5 +92,8 @@ namespace RestTEC.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, studentBL.GetAll());
         }
 
+
+ 
+
     }
 }
