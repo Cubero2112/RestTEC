@@ -72,6 +72,7 @@ namespace RestTEC.Controllers
             ReporteLogic reporteBL = new ReporteLogic();
             Reporte reporte = reporteBL.GetReporte();
 
+            
             return Request.CreateResponse(HttpStatusCode.OK, reporte);
         }
 
