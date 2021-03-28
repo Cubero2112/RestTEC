@@ -99,7 +99,7 @@ namespace RestTEC.Models
 
 
                 //---------- Ordena los platillos de que tiene mejor a peor feedback
-                platillos.Sort((x, y) => (x.Feedback).CompareTo(y.Feedback));
+                platillos.Sort((x, y) => (y.Feedback).CompareTo(x.Feedback));
                 //---------- Ordena los platillos de que tiene mejor a peor feedback
 
 
