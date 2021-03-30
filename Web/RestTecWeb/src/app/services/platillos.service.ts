@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http"
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/internal/Observable";
 
 import {PlatilloInterface} from "src/app/interfaces/platillos-interface";

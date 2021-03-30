@@ -26,7 +26,7 @@ namespace RestTEC.Controllers
         }
 
         [HttpPost]
-        [Route("menu/savePlato/{codigoPlatillo}")]
+        [Route("menu/savePlatillo/{codigoPlatillo}")]
         public HttpResponseMessage SavePlatillo(int codigoPlatillo)
         {
             MenuLogic menuLogic = new MenuLogic();

@@ -42,8 +42,6 @@ export class ReportesComponent implements OnInit {
 
   cargarDatos(data:ReportesInterface){    
 
-    console.log(data.PlatillosMejorFeedBack[0].Nombre);
-
     for (var i = 0; i < 10; i++) {
       this.reporteVendidos.push({"nombre":data.PlatillosMasVendidos[i].Nombre, "valor": data.PlatillosMasVendidos[i].NumeroVentas});
     } 
