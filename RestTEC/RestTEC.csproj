@@ -120,7 +120,6 @@
     <Content Include="data\clientes.json" />
     <Content Include="data\pedidos.json" />
     <Content Include="data\platillos.json" />
-    <Content Include="data\reportes.json" />
     <Content Include="data\menu.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">

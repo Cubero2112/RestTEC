@@ -1,3 +1,16 @@
 [
-
+  {
+    "Apellido": "Cubero",
+    "Canton": "Central",
+    "Cedula": 305180146,
+    "DiaNacimiento": 7,
+    "Distrito": "Quebradilla",
+    "HistorialPedidos": null,
+    "MesNacimiento": 6,
+    "Nombre": "Josue",
+    "Orden": 0,
+    "Provincia": "Cartago",
+    "Telefono": 85524639,
+    "UserName": "Cubero2112"
+  }
 ]

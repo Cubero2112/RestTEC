@@ -10,11 +10,12 @@ using System.Web.Http.Cors;
 
 namespace RestTEC.Controllers
 {
-    [BasicAuthentication]
-    [MyAuthorize(Roles = "Admin,Client,Chef")]
+
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class MenuController : ApiController
     {
+        [BasicAuthentication]
+        [MyAuthorize(Roles = "Admin,Client")]
         [HttpGet]
         [Route("menu/get")]
         public HttpResponseMessage GetMenu()
@@ -25,6 +26,8 @@ namespace RestTEC.Controllers
 
         }
 
+        [BasicAuthentication]
+        [MyAuthorize(Roles = "Admin")]
         [HttpPost]
         [Route("menu/savePlato/{codigoPlatillo}")]
         public HttpResponseMessage SavePlatillo(int codigoPlatillo)
@@ -35,7 +38,8 @@ namespace RestTEC.Controllers
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-
+        [BasicAuthentication]
+        [MyAuthorize(Roles = "Admin")]
         [HttpDelete]
         [Route("menu/deletePlatillo/{codigoPlatillo}")]
         public HttpResponseMessage DeletePlatillo(int codigoPlatillo)

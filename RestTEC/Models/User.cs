@@ -10,8 +10,7 @@ using System.Web;
 namespace RestTEC.Models
 {
     public class User
-    {
-        public int ID { get; set; }
+    {        
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Roles { get; set; }
@@ -19,7 +18,6 @@ namespace RestTEC.Models
     }
     public class UserBL
     {
-
         private string jsonFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "", "data", "users.json"));
         public List<User> GetUsers()
         {
@@ -39,30 +37,44 @@ namespace RestTEC.Models
 
             return usersList;
         }
+        public User InsertUser(User newUser)
+        {            
+            var userLists = GetUsers();
 
-        public void InsertUser(User newUser)
-        {
-            var usersList = GetUsers();
-            usersList.Add(newUser);
-            Serialize(usersList);
+            bool existedUser = userLists.Any(user => user.UserName.Equals(newUser.UserName, StringComparison.OrdinalIgnoreCase));
+            if (existedUser)
+            {
+                return null;
+            }
+
+            userLists.Add(newUser);
+
+            Serialize(userLists);
+
+            return newUser;
         }
-
         public UserToken UserLogin(User userLogin)
         {            
-            var userFound = UserValidate.GetUserDetails(userLogin.UserName, userLogin.Password);
-            if(userFound != null)
+            var userFound = UserValidate.Login(userLogin.UserName, userLogin.Password); 
+            if(userFound) //Si el usuario ya se encuentra registrado en la base de datos se le daran sus credenciales (Token)
             {
+                var userInDB = UserValidate.GetUserDetails(userLogin.UserName, userLogin.Password);
+
                 string encodeString = $"{userLogin.UserName}:{userLogin.Password}";
+
                 UserToken userToken = new UserToken()
                 {
-                    UserName = userFound.UserName,
-                    Role = userFound.Roles,
+                    UserName = userInDB.UserName,
+                    Role = userInDB.Roles,
                     Token = Convert.ToBase64String(Encoding.UTF8.GetBytes(encodeString))
                 };
 
                 return userToken;
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
         private void Serialize(List<User> usersList)
         {
