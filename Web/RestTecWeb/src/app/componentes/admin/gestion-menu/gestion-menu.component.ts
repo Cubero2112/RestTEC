@@ -76,11 +76,11 @@ export class GestionMenuComponent implements OnInit {
   agregarPlatoMenu(codigo:number){
     console.log(codigo);
     this.dataMenu.agregarPlatoAlMenu(codigo)
-    .subscribe(response=> console.log("Agregado"));
+    .subscribe(response=> location.reload());
   }
 
   eliminarPlato(codigo:number){
     this.dataMenu.eliminarPlatoDelMenu(codigo)
-    .subscribe(response=> console.log("eliminado"));
+    .subscribe(response=> location.reload());
   }
 }

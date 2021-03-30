@@ -1,27 +1,15 @@
 [
   {
-    "Codigo": 0,
-    "Nombre": "Ensalada",
-    "Precio": 590.0,
-    "Descripcion": "Hola soy una ensalada",
-    "Calorias": 100.0,
-    "Tipo": "Harina",
-    "Puntuacion": 0.0,
-    "NumeroVentas": 1,
-    "TiempoPreparacion": 5.0,
-    "Feedback": 9
-  },
-  {
-    "Codigo": 1,
-    "Nombre": "Frijoles",
-    "Precio": 500.0,
-    "Descripcion": "Frijolitos",
     "Calorias": 50.0,
-    "Tipo": "Harina",
-    "Puntuacion": 0.0,
+    "Codigo": 1,
+    "Descripcion": "Frijolitos",
+    "Feedback": 6.0,
+    "Nombre": "Frijoles",
     "NumeroVentas": 15,
+    "Precio": 500.0,
+    "Puntuacion": 0.0,
     "TiempoPreparacion": 5.0,
-    "Feedback": 6
+    "Tipo": "Harina"
   },
   {
     "Codigo": 2,
@@ -33,7 +21,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 13,
     "TiempoPreparacion": 100.0,
-    "Feedback": 1
+    "Feedback": 1.0
   },
   {
     "Codigo": 3,
@@ -45,7 +33,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 3,
     "TiempoPreparacion": 5.0,
-    "Feedback": 2
+    "Feedback": 2.0
   },
   {
     "Codigo": 4,
@@ -57,7 +45,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 2,
     "TiempoPreparacion": 0.0,
-    "Feedback": 32
+    "Feedback": 32.0
   },
   {
     "Codigo": 5,
@@ -93,7 +81,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 6,
     "TiempoPreparacion": 3123.0,
-    "Feedback": 98
+    "Feedback": 98.0
   },
   {
     "Codigo": 8,
@@ -105,7 +93,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 4,
     "TiempoPreparacion": 12312312.0,
-    "Feedback": 12
+    "Feedback": 12.0
   },
   {
     "Codigo": 9,
@@ -117,18 +105,42 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 10,
     "TiempoPreparacion": 3123.0,
-    "Feedback": 12
+    "Feedback": 12.0
   },
   {
-    "Calorias": 123.0,
     "Codigo": 10,
-    "Descripcion": "123qwd",
-    "Feedback": 3,
     "Nombre": "Sandwich",
-    "NumeroVentas": 12,
     "Precio": 650.0,
+    "Descripcion": "123qwd",
+    "Calorias": 123.0,
+    "Tipo": "Harina",
     "Puntuacion": 0.0,
+    "NumeroVentas": 12,
     "TiempoPreparacion": 123.0,
-    "Tipo": "Harina"
+    "Feedback": 3.0
+  },
+  {
+    "Codigo": 11,
+    "Nombre": "Ensalada",
+    "Precio": 590.0,
+    "Descripcion": "Hola soy una ensalada",
+    "Calorias": 100.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 0,
+    "TiempoPreparacion": 5.0,
+    "Feedback": 0.0
+  },
+  {
+    "Codigo": 12,
+    "Nombre": "Mondongo",
+    "Precio": 800.0,
+    "Descripcion": "Mondongo",
+    "Calorias": 600.0,
+    "Tipo": "Carne",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 0,
+    "TiempoPreparacion": 2.0,
+    "Feedback": 0.0
   }
 ]

@@ -26,11 +26,11 @@ namespace RestTEC.Controllers
         }
 
         [HttpPost]
-        [Route("menu/savePlatillo/{codigoPlatillo}")]
-        public HttpResponseMessage SavePlatillo(int codigoPlatillo)
+        [Route("menu/savePlatillo")]
+        public HttpResponseMessage SavePlatillo([FromBody] Platillo platillo)
         {
             MenuLogic menuLogic = new MenuLogic();
-            menuLogic.Insert(codigoPlatillo);
+            menuLogic.Insert(platillo.Codigo);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }

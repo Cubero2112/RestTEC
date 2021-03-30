@@ -1,1 +1,1 @@
-{"platillos":[{"Codigo":1,"Nombre":"Frijoles","Precio":500.0,"Descripcion":"Frijolitos","Calorias":50.0,"Tipo":"Harina","Puntuacion":0.0,"NumeroVentas":15,"TiempoPreparacion":5.0,"Feedback":6.0},{"Codigo":3,"Nombre":"Lasagna","Precio":700.0,"Descripcion":"asdafasfdafd","Calorias":50.0,"Tipo":"Harina","Puntuacion":0.0,"NumeroVentas":3,"TiempoPreparacion":5.0,"Feedback":2.0}]}
+{"platillos":[{"Codigo":5,"Nombre":"Pollo","Precio":600.0,"Descripcion":"asdasfasfasdf","Calorias":80.0,"Tipo":"Carne","Puntuacion":0.0,"NumeroVentas":8,"TiempoPreparacion":4.0,"Feedback":12.2}]}
