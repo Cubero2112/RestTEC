@@ -1,1 +1,50 @@
 <app-navbar-admin></app-navbar-admin>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-sm">
+        <hr>
+            <h3 class="text-center">Menú del día</h3>
+        <hr>
+        <table id="menuTable" border="1" class="table table-bordered table-sm">
+        <thead class="thead-light text-center">
+            <tr>
+                <th>Nombre del plato</th>
+                <th>Precio (¢)</th>
+                <th>Calorías</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dato of menuDelDia; let i = index" class="text-center">
+                <td>{{dato.nombre}}</td>
+                <td>{{dato.precio}}</td> 
+                <td>{{dato.calorias}}</td> 
+                <td> 
+                    <a class="btn btn-danger" (click) = "eliminarPlato(dato.codigo)" > Eliminar </a> 
+                </td>       
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="col-sm-4">
+        <hr>
+            <h3 class="text-center text-dark">Platos Disponibles</h3>
+        <hr>
+         <table id="platosTable" border="1" class="table table-bordered table-sm">
+        <thead class="thead-light text-center">
+            <tr>
+                <th>Plato</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dato of platosAMostrar; let i = index" class="text-center">
+                <td>{{dato.nombre}}</td>
+                <td> 
+                    <a class="btn btn-light" (click) = "agregarPlatoMenu(dato.codigo)"> Agregar </a> 
+                </td>      
+            </tr>
+        </tbody>
+    </table>
+    </div>
+  </div>
+</div>
