@@ -1,0 +1,117 @@
+<resources>
+    <string name="app_name">App</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="provincias">
+        <item>San Jose</item>
+        <item>Alajuela</item>
+        <item>Cartago</item>
+        <item>Heredia</item>
+        <item>Guanacaste</item>
+        <item>Puntarenas</item>
+        <item>Limón</item>
+    </string-array>
+
+    <string-array name="Scantones">
+        <item>Escazú</item>
+        <item>Desamparados</item>
+        <item>Puriscal</item>
+        <item>Tarrazú</item>
+        <item>Aserrí</item>
+        <item>Mora</item>
+        <item>Goicoechea</item>
+        <item>Santa Ana</item>
+        <item>Alajuelita</item>
+        <item>Vázquez de Coronado</item>
+        <item>Acosta</item>
+        <item>Tibás</item>
+        <item>Moravia</item>
+        <item>Montes de Oca</item>
+        <item>Turrubares</item>
+        <item>Dota</item>
+        <item>Curridabat</item>
+        <item>Pérez Zeledón</item>
+        <item>León Cortés Castro</item>
+    </string-array>
+
+    <string-array name="Acantones">
+        <item>San Ramón</item>
+        <item>Grecia</item>
+        <item>San Mateo</item>
+        <item>Atenas</item>
+        <item>Naranjo</item>
+        <item>Palmares</item>
+        <item>Poás</item>
+        <item>San Pedro</item>
+        <item>Orotina</item>
+        <item>Quesada</item>
+        <item>Zarcero</item>
+        <item>Sarchí</item>
+        <item>Upala</item>
+        <item>Los Chiles</item>
+        <item>Guatuso</item>
+        <item>Río Cuarto</item>
+        <item>San Carlos</item>
+    </string-array>
+
+    <string-array name="Ccantones">
+        <item>Cartago</item>
+        <item>Alvarado</item>
+        <item>El Guarco</item>
+        <item>Jiménez</item>
+        <item>La Unión</item>
+        <item>Oreamuno</item>
+        <item>Paraíso</item>
+        <item>Turrialba</item>
+    </string-array>
+
+    <string-array name="Hcantones">
+        <item>Heredia</item>
+        <item>Barva</item>
+        <item>Belén</item>
+        <item>Flores</item>
+        <item>San Pablo</item>
+        <item>San Rafael</item>
+        <item>Santa Bárbara</item>
+        <item>Santo Domingo</item>
+        <item>Sarapiquí</item>
+    </string-array>
+
+    <string-array name="Pcantones">
+        <item>Puntarenas</item>
+        <item>Buenos Aires</item>
+        <item>Corredores</item>
+        <item>Coto Brus</item>
+        <item>Esparza</item>
+        <item>Garabito</item>
+        <item>Golfito</item>
+        <item>Osa</item>
+        <item>Parrita</item>
+        <item>Quepos</item>
+    </string-array>
+
+    <string-array name="Lcantones">
+        <item>Limón</item>
+        <item>Guácimo</item>
+        <item>Matina</item>
+        <item>Pococí</item>
+        <item>Siquirres</item>
+        <item>Talamanca</item>
+    </string-array>
+
+    <string-array name="Gcantones">
+        <item>Liberia</item>
+        <item>Abangares</item>
+        <item>Bagaces</item>
+        <item>Cañas</item>
+        <item>Carrillo</item>
+        <item>Hojancha</item>
+        <item>La Cruz</item>
+        <item>Nandayure</item>
+        <item>Nicoya</item>
+        <item>Santa Cruz</item>
+        <item>Tilarán</item>
+    </string-array>
+
+
+</resources>
