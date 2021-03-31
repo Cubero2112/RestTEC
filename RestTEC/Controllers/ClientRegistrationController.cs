@@ -8,7 +8,7 @@ using System.Web.Http;
 
 namespace RestTEC.Controllers
 {
-    public class UserRegistrationController : ApiController
+    public class ClientRegistrationController : ApiController
     {
         [HttpPost]
         [Route("registration")] //localhost:2342/UserRegistration/registration
@@ -31,6 +31,7 @@ namespace RestTEC.Controllers
                 UserName = newClient.UserName,
                 DiaNacimiento = newClient.DiaNacimiento,
                 MesNacimiento = newClient.MesNacimiento,
+                AnioNacimiento = newClient.AnioNacimiento,
                 Provincia = newClient.Provincia,
                 Canton = newClient.Canton,
                 Distrito = newClient.Distrito,
@@ -41,6 +42,7 @@ namespace RestTEC.Controllers
             var userCreated = userBL.InsertUser(user);
             if(userCreated == null) //Existe un usuario con ese UserName en la base de datos por tanto el nuevo user no será creado
             {
+                
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
             else
@@ -48,6 +50,7 @@ namespace RestTEC.Controllers
                 var clientCreated = clientBL.Insert(client);
                 if(clientCreated == null) // Si no es posible crear al nuevo cliente. (Nota: Aun no se cual podria ser una posible restriccion en este punto)
                 {
+                    userBL.Delete(user.UserName);
                     return Request.CreateResponse(HttpStatusCode.BadRequest);
                 }
                 else

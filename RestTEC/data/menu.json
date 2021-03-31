@@ -1,1 +1,40 @@
-{"platillos":[{"Codigo":5,"Nombre":"Pollo","Precio":600.0,"Descripcion":"asdasfasfasdf","Calorias":80.0,"Tipo":"Carne","Puntuacion":0.0,"NumeroVentas":8,"TiempoPreparacion":4.0,"Feedback":12.2}]}
+{
+  "platillos": [
+    {
+      "Codigo": 5,
+      "Nombre": "Pollo",
+      "Precio": 600.0,
+      "Descripcion": "asdasfasfasdf",
+      "Calorias": 80.0,
+      "Tipo": "Carne",
+      "Puntuacion": 0.0,
+      "NumeroVentas": 8,
+      "TiempoPreparacion": 4.0,
+      "Feedback": 12.2
+    },
+    {
+      "Codigo": 2,
+      "Nombre": "Arroz",
+      "Precio": 250.0,
+      "Descripcion": "Cubero Gay",
+      "Calorias": 50.0,
+      "Tipo": "Harina",
+      "Puntuacion": 0.0,
+      "NumeroVentas": 13,
+      "TiempoPreparacion": 100.0,
+      "Feedback": 1.0
+    },
+    {
+      "Calorias": 50.0,
+      "Codigo": 1,
+      "Descripcion": "Frijolitos",
+      "Feedback": 6.0,
+      "Nombre": "Frijoles",
+      "NumeroVentas": 15,
+      "Precio": 500.0,
+      "Puntuacion": 0.0,
+      "TiempoPreparacion": 5.0,
+      "Tipo": "Harina"
+    }
+  ]
+}

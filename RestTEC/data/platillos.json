@@ -1,27 +1,15 @@
 [
   {
-    "Calorias": 100.0,
-    "Codigo": 0,
-    "Descripcion": "Hola soy una ensalada",
-    "Feedback": 9.0,
-    "Nombre": "Ensalada",
-    "NumeroVentas": 1,
-    "Precio": 590.0,
+    "Calorias": 50.0,
+    "Codigo": 1,
+    "Descripcion": "Frijolitos",
+    "Feedback": 6.0,
+    "Nombre": "Frijoles",
+    "NumeroVentas": 15,
+    "Precio": 500.0,
     "Puntuacion": 0.0,
     "TiempoPreparacion": 5.0,
     "Tipo": "Harina"
-  },
-  {
-    "Codigo": 1,
-    "Nombre": "Frijoles",
-    "Precio": 500.0,
-    "Descripcion": "Frijolitos",
-    "Calorias": 50.0,
-    "Tipo": "Harina",
-    "Puntuacion": 0.0,
-    "NumeroVentas": 15,
-    "TiempoPreparacion": 5.0,
-    "Feedback": 6.0
   },
   {
     "Codigo": 2,
@@ -132,7 +120,31 @@
     "Feedback": 3.0
   },
   {
-    "Codigo": 20,
+    "Codigo": 11,
+    "Nombre": "Ensalada",
+    "Precio": 590.0,
+    "Descripcion": "Hola soy una ensalada",
+    "Calorias": 100.0,
+    "Tipo": "Harina",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 0,
+    "TiempoPreparacion": 5.0,
+    "Feedback": 0.0
+  },
+  {
+    "Codigo": 12,
+    "Nombre": "Mondongo",
+    "Precio": 800.0,
+    "Descripcion": "Mondongo",
+    "Calorias": 600.0,
+    "Tipo": "Carne",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 0,
+    "TiempoPreparacion": 2.0,
+    "Feedback": 0.0
+  },
+  {
+    "Codigo": 13,
     "Nombre": "Pastel de Pollo",
     "Precio": 3495.0,
     "Descripcion": "Pastel de Pollo en salsa blanca",
@@ -144,7 +156,7 @@
     "Feedback": 0.0
   },
   {
-    "Codigo": 21,
+    "Codigo": 14,
     "Nombre": "Costilla de Cerdo",
     "Precio": 5490.0,
     "Descripcion": "Costilla de Cerdo en salsa BBQ",
@@ -153,6 +165,6 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 0,
     "TiempoPreparacion": 30.0,
-    "Feedback": 0.0
+    "FeedBack": 0.0
   }
 ]

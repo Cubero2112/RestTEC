@@ -19,7 +19,7 @@ namespace RestTEC.Controllers
     public class AdmiController : ApiController
     {
         [HttpGet]
-        [Route("getPlatillos")]
+        [Route("admi/getPlatillos")]
         public HttpResponseMessage GetPlatillos()
         {
             PlatilloLogic platilloBL = new PlatilloLogic();

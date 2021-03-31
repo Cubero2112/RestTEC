@@ -37,15 +37,30 @@ namespace RestTEC.Models
 
             return usersList;
         }
-        public User InsertUser(User newUser)
-        {            
-            var userLists = GetUsers();
-
-            bool existedUser = userLists.Any(user => user.UserName.Equals(newUser.UserName, StringComparison.OrdinalIgnoreCase));
-            if (existedUser)
+        public User GetByUserName(string userName)
+        {
+            //(Read) GET         
+            User actualUser = GetUsers().FirstOrDefault(user => user.UserName.Equals(userName));
+            if (actualUser == null)
             {
                 return null;
             }
+            return actualUser;
+        }
+        public User InsertUser(User newUser)
+        {
+            var userLists = GetUsers();
+
+            bool existedUser = userLists.Any(user => user.UserName.Equals(newUser.UserName));
+            string email = newUser.Email;
+
+            if (existedUser || !(email.Contains('@'))) //No se puede registrar si envia un correo sin @ o si ya el userName esta siendo usado por otro usuario
+            {
+                return null;
+            }
+
+            ConteoBL conteoBL = new ConteoBL();
+            int nuevoUser = conteoBL.AumentarUsuarios();
 
             userLists.Add(newUser);
 
@@ -75,6 +90,25 @@ namespace RestTEC.Models
             {
                 return null;
             }
+        }
+        public User Delete(string UserName)
+        {
+            //(D) DELETE
+            List<User> userList = GetUsers(); // Base de datos actual
+
+            User user = userList.SingleOrDefault(singleUser => singleUser.UserName.Equals(UserName));
+            if (user == null)
+            {
+                return null;
+            }
+
+            ConteoBL conteoBL = new ConteoBL();
+            int numeroUser = conteoBL.DisminuirUsuarios();
+
+
+            userList.Remove(user);
+            Serialize(userList);
+            return user;
         }
         private void Serialize(List<User> usersList)
         {

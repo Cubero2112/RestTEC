@@ -11,7 +11,6 @@ using System.Web.Security;
 
 namespace RestTEC.Controllers
 {
-
     public class LoginController : ApiController
     {
         [HttpPost]

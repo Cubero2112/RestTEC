@@ -35,7 +35,7 @@ namespace RestTEC.Models
             
             /* ------------------- Post/insert Method -----------------------*/
             PlatilloLogic platilloLogic = new PlatilloLogic();
-            Platillo platillo = platilloLogic.GetById(codigoPlatillo);
+            Platillo platillo = platilloLogic.GetByCodigo(codigoPlatillo);
 
             if(menu.platillos == null)
             {

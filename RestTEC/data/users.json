@@ -22,5 +22,11 @@
     "Password": "contraseMuySegura1234",
     "Roles": "Client",
     "Email": "josuecub.mont@hotmail.com"
+  },
+  {
+    "UserName": "jorgeEagle33",
+    "Password": "contraVientoMarea",
+    "Roles": "Client",
+    "Email": "josuecub.mont@hotmail.com"
   }
 ]

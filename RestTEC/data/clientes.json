@@ -1,16 +1,128 @@
 [
   {
-    "Apellido": "Cubero",
-    "Canton": "Central",
-    "Cedula": 305180146,
-    "DiaNacimiento": 7,
-    "Distrito": "Quebradilla",
+    "AnioNacimiento": 1990,
+    "Apellido": "Aguilera",
+    "Canton": "El Guarco",
+    "Cedula": 302100443,
+    "DiaNacimiento": 20,
+    "Distrito": "Tejar",
     "HistorialPedidos": null,
-    "MesNacimiento": 6,
-    "Nombre": "Josue",
+    "MesNacimiento": 8,
+    "Nombre": "Jorge",
     "Orden": 0,
+    "PedidoActual": null,
     "Provincia": "Cartago",
+    "Telefono": 86223574,
+    "UserName": "jorgeEagle33"
+  },
+  {
+    "Cedula": 305180146,
+    "Nombre": "Josue",
+    "Apellido": "Cubero",
+    "UserName": "Cubero2112",
+    "Provincia": "Cartago",
+    "Canton": "Central",
+    "Distrito": "Quebradilla",
+    "DiaNacimiento": 7,
+    "MesNacimiento": 6,
+    "AnioNacimiento": 1999,
     "Telefono": 85524639,
-    "UserName": "Cubero2112"
+    "Orden": 1,
+    "PedidoActual": {
+      "Chef": "No asignado",
+      "Platillos": [
+        {
+          "Codigo": 1,
+          "Nombre": "Frijoles",
+          "Precio": 500.0,
+          "Descripcion": "Frijolitos",
+          "Calorias": 50.0,
+          "Tipo": "Harina",
+          "Puntuacion": 0.0,
+          "NumeroVentas": 15,
+          "TiempoPreparacion": 5.0,
+          "Feedback": 6.0
+        },
+        {
+          "Codigo": 2,
+          "Nombre": "Arroz",
+          "Precio": 250.0,
+          "Descripcion": "Cubero Gay",
+          "Calorias": 50.0,
+          "Tipo": "Harina",
+          "Puntuacion": 0.0,
+          "NumeroVentas": 13,
+          "TiempoPreparacion": 100.0,
+          "Feedback": 1.0
+        },
+        {
+          "Codigo": 5,
+          "Nombre": "Pollo",
+          "Precio": 600.0,
+          "Descripcion": "asdasfasfasdf",
+          "Calorias": 80.0,
+          "Tipo": "Carne",
+          "Puntuacion": 0.0,
+          "NumeroVentas": 8,
+          "TiempoPreparacion": 4.0,
+          "Feedback": 12.2
+        }
+      ],
+      "TiempoPreparacionPromedio": 109.0,
+      "EstaListo": false,
+      "Orden": 1,
+      "Init": null,
+      "Finish": null,
+      "TiempoPreparacionReal": null
+    },
+    "HistorialPedidos": [
+      {
+        "Chef": "No asignado",
+        "Platillos": [
+          {
+            "Codigo": 1,
+            "Nombre": "Frijoles",
+            "Precio": 500.0,
+            "Descripcion": "Frijolitos",
+            "Calorias": 50.0,
+            "Tipo": "Harina",
+            "Puntuacion": 0.0,
+            "NumeroVentas": 15,
+            "TiempoPreparacion": 5.0,
+            "Feedback": 6.0
+          },
+          {
+            "Codigo": 2,
+            "Nombre": "Arroz",
+            "Precio": 250.0,
+            "Descripcion": "Cubero Gay",
+            "Calorias": 50.0,
+            "Tipo": "Harina",
+            "Puntuacion": 0.0,
+            "NumeroVentas": 13,
+            "TiempoPreparacion": 100.0,
+            "Feedback": 1.0
+          },
+          {
+            "Codigo": 5,
+            "Nombre": "Pollo",
+            "Precio": 600.0,
+            "Descripcion": "asdasfasfasdf",
+            "Calorias": 80.0,
+            "Tipo": "Carne",
+            "Puntuacion": 0.0,
+            "NumeroVentas": 8,
+            "TiempoPreparacion": 4.0,
+            "Feedback": 12.2
+          }
+        ],
+        "TiempoPreparacionPromedio": 109.0,
+        "EstaListo": false,
+        "Orden": 1,
+        "Init": null,
+        "Finish": null,
+        "TiempoPreparacionReal": null
+      }
+    ]
   }
 ]

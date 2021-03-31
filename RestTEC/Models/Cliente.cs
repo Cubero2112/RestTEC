@@ -18,8 +18,10 @@ namespace RestTEC.Models
         public string Distrito { get; set; }
         public int DiaNacimiento { get; set; }
         public int MesNacimiento { get; set; }
+        public int AnioNacimiento { get; set; }
         public int Telefono { get; set; }
         public int Orden { get; set; }
+        public Pedido PedidoActual { get; set; }
         public Pedido[] HistorialPedidos { get; set; }
 
     }
@@ -38,49 +40,121 @@ namespace RestTEC.Models
 
             return clientsList;
         }
-        public Cliente Insert(Cliente client)        
-        {
-            //(Created) POST             
-            List<Cliente> clientsList = DataSource(); // Relacion Client en su estado actual deserealizada
-            clientsList.Add(client);
-            Serialize(clientsList); //Almacenamos la ultima version de la relacion Client
-
-            return client;
-            
-        }
-        public IEnumerable<Cliente> GetAll()      
+        public IEnumerable<Cliente> GetAll()
         {
             //(Read) GET            
             return DataSource();
         }
-        public Cliente GetById(int CedulaCliente) 
+        public Cliente Insert(Cliente newClient)
         {
-            //(Read) GET            
-            Cliente client = DataSource().FirstOrDefault(singleClient => singleClient.Cedula == CedulaCliente);
+            //(Created) POST                  
+            List<Cliente> clientsList = DataSource(); // Relacion Client en su estado actual deserealizada
+
+            bool existedClient = clientsList.Any(client => client.UserName.Equals(newClient.UserName));
+
+            if (existedClient)
+            {
+                return null;
+            }
+            else
+            {
+                string cedula = newClient.Cedula.ToString();
+                int diaNacimiento = newClient.DiaNacimiento;
+                int mesNacimiento = newClient.MesNacimiento;
+                string anioNacimiento = newClient.AnioNacimiento.ToString();
+                string telefono = newClient.Telefono.ToString();
+
+                if( (cedula.Length == 9)   && 
+                    (telefono.Length == 8) && 
+                    (1 <= diaNacimiento  && diaNacimiento <= 31)   && 
+                    (1 <= mesNacimiento  && mesNacimiento <= 12)   && 
+                    (anioNacimiento.Length == 4))
+                {
+                clientsList.Add(newClient); //Agregamos al cliente
+                Serialize(clientsList); //Almacenamos la ultima version de la relacion Client
+
+                return newClient;
+                }
+                else
+                {
+                    return null;
+                }
+
+            }
+            
+        }
+        public Cliente InsertPedidoACliente(Pedido newPedido, string UserName)
+        {
+            Cliente actualClient = GetById(UserName);
+
+            if (actualClient == null)
+            {
+                return null;
+            }
+            else
+            {
+                if (actualClient.HistorialPedidos == null)
+                {
+                    actualClient.HistorialPedidos = new Pedido[] { newPedido };
+                }
+                else
+                {
+                    var HistorialPedidos = actualClient.HistorialPedidos.ToList();
+                    HistorialPedidos.Add(newPedido);
+                    actualClient.HistorialPedidos = HistorialPedidos.ToArray();
+                }
+
+                actualClient.PedidoActual = newPedido;
+                actualClient.Orden = newPedido.Orden;
+
+
+                Update(actualClient);
+                return actualClient;
+            }
+            
+        }
+        public Cliente GetById(string clientUserName) 
+        {
+            //(Read) GET         
+            Cliente client = DataSource().FirstOrDefault(user => user.UserName.Equals(clientUserName));
+            
             if(client == null)
             {
                 return null;
             }
             return client;
         }
-        public Cliente Update(Cliente cliente)    
+        public Cliente Update(Cliente actualClient)    
         {
             //(Update) PUT            
-            var localStudent = Delete(cliente.Cedula);
-            if (localStudent != null)
+            var oldClient = Delete(actualClient.UserName);
+            if (oldClient != null) //Seria diferente de null SOLO SI oldClient si existe
             {
-                Insert(cliente);
-                return cliente;
+                actualClient = Insert(actualClient);
+                if(actualClient != null)
+                {
+                    
+                    return oldClient;
+                }
+                else
+                {
+                    Insert(oldClient);
+                    return null;
+                }
             }
-            return null;
+            else
+            {                
+                return null;
+            }
+            
         }
-        public Cliente Delete(int CedulaCliente)  
+        public Cliente Delete(string clientUserName)  
         {
             //(Delete) DELETE
             
             List<Cliente> clientsList = DataSource();// Relacion Client en su estado actual deserealizada
 
-            Cliente client = clientsList.SingleOrDefault(singleClient => singleClient.Cedula == CedulaCliente);
+            Cliente client = clientsList.SingleOrDefault(user => user.UserName.Equals(clientUserName));
             if (client == null)
             {
                 return null; //Si el client que se desea borrar no existe, se retorna un null
@@ -116,6 +190,7 @@ namespace RestTEC.Models
         public string Apellido { get; set; }
         public int DiaNacimiento { get; set; }
         public int MesNacimiento { get; set; }
+        public int AnioNacimiento { get; set; }
         public string Provincia { get; set; }
         public string Canton { get; set; }
         public string Distrito { get; set; }

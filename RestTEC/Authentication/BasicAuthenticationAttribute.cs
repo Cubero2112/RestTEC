@@ -16,6 +16,8 @@ namespace RestTEC.Authentication
     public class BasicAuthenticationAttribute : AuthorizationFilterAttribute
     {
         private const string Realm = "My Realm";
+        public static string UserNameActual;
+        public static string PassWordActual;
         public override void OnAuthorization(HttpActionContext actionContext)
         {
             if (actionContext.Request.Headers.Authorization == null) // Si no se envia en el encabezado del request las credenciales para hacer el Login
@@ -33,6 +35,9 @@ namespace RestTEC.Authentication
                 string[] usernamePasswordArray = decodedAuthenticationToken.Split(':');
                 string username = usernamePasswordArray[0];
                 string password = usernamePasswordArray[1];
+
+                UserNameActual = usernamePasswordArray[0];
+                PassWordActual = usernamePasswordArray[1];
 
                 if (UserValidate.Login(username, password)) //Si existe un user tal que ya se haya registrato (Que se encuentre en la base de datos).
                 {
