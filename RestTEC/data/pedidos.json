@@ -3,33 +3,33 @@
     "Chef": "No asignado",
     "Platillos": [
       {
-        "Codigo": 1,
-        "Nombre": "Frijoles",
-        "Precio": 500.0,
-        "Descripcion": "Frijolitos",
         "Calorias": 50.0,
-        "Tipo": "Harina",
-        "Puntuacion": 0.0,
+        "Codigo": 1,
+        "Descripcion": "Frijolitos",
+        "Feedback": 0.0,
+        "Nombre": "Frijoles",
         "NumeroVentas": 15,
+        "Precio": 500.0,
+        "Puntuacion": 0.0,
         "TiempoPreparacion": 5.0,
-        "Feedback": 6.0
+        "Tipo": "Harina"
       },
       {
-        "Calorias": 123.0,
         "Codigo": 10,
-        "Descripcion": "123qwd",
-        "Feedback": 3.0,
         "Nombre": "Sandwich",
-        "NumeroVentas": 12,
         "Precio": 650.0,
+        "Descripcion": "123qwd",
+        "Calorias": 123.0,
+        "Tipo": "Harina",
         "Puntuacion": 0.0,
+        "NumeroVentas": 12,
         "TiempoPreparacion": 123.0,
-        "Tipo": "Harina"
+        "Feedback": 0.0
       }
     ],
     "TiempoPreparacionPromedio": 128.0,
     "EstaListo": false,
-    "Orden": 3,
+    "Orden": 1,
     "Init": null,
     "Finish": null,
     "TiempoPreparacionReal": null
@@ -47,7 +47,7 @@
         "Puntuacion": 0.0,
         "NumeroVentas": 13,
         "TiempoPreparacion": 100.0,
-        "Feedback": 1.0
+        "Feedback": 0.0
       },
       {
         "Codigo": 13,
@@ -71,14 +71,14 @@
         "Puntuacion": 0.0,
         "NumeroVentas": 2,
         "TiempoPreparacion": 0.0,
-        "Feedback": 32.0
+        "Feedback": 0.0
       }
     ],
     "TiempoPreparacionPromedio": 125.0,
-    "EstaListo": false,
+    "EstaListo": true,
     "Orden": 2,
     "Init": "16:22:58",
-    "Finish": null,
-    "TiempoPreparacionReal": null
+    "Finish": "17:29:08",
+    "TiempoPreparacionReal": "01:06:10"
   }
 ]

@@ -127,17 +127,22 @@ namespace RestTEC.Models
 
             for(int i = 0; i < clients.Count; i++)
             {
-                if ( clients[i].OrdenesActuales != null || clients[i].OrdenesActuales.Length != 0)
+                if(clients[i].OrdenesActuales != null)
                 {
-                    if(clients[i].OrdenesActuales.ToList().Any(orden => orden == numeroOrden))
+
+                    var listaOrdenes = clients[i].OrdenesActuales.ToList();
+
+                    bool orderOwn = listaOrdenes.Any(orden => orden == numeroOrden);
+                    if (orderOwn)
                     {
-                        var listaOrdenes = clients[i].OrdenesActuales.ToList();
                         listaOrdenes.Remove(numeroOrden);
                         clients[i].OrdenesActuales = listaOrdenes.ToArray();
                         break;
-
                     }
+                
+
                 }
+
             }
 
             Serialize(clients);

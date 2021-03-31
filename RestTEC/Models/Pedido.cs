@@ -165,7 +165,7 @@ namespace RestTEC.Models
             UserBL userBL = new UserBL();
             User chef = userBL.GetByUserName(ChefUserName);
 
-            if(pedido == null || chef == null || !chef.Equals(pedido.Chef))
+            if (pedido == null || chef == null || !chef.UserName.Equals(pedido.Chef))
             {
                 return null;
             }
@@ -207,7 +207,7 @@ namespace RestTEC.Models
             }
 
             ConteoBL conteoBL = new ConteoBL();
-            int numeroPedidos = conteoBL.DisminuirPedidos();
+            //int numeroPedidos = conteoBL.DisminuirPedidos();
 
             pedidosList.Remove(pedido);
             Serialize(pedidosList); //Almacenamos la ultima version de la base de datos

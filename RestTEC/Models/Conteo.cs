@@ -56,35 +56,7 @@ namespace RestTEC.Models
 
             Serialize(conteo);
             return nuevoNumeroUsuarios;
-        }
-        public int DisminuirPlatillos()
-        {
-            Conteo conteo = DataSource();
-
-            int nuevoNumeroPlatillos = --conteo.Platillos;
-
-            Serialize(conteo);
-
-            return nuevoNumeroPlatillos;
-        }
-        public int DisminuirPedidos()
-        {
-            Conteo conteo = DataSource();
-
-            int nuevoNumeroPedido = --conteo.Pedidos;
-
-            Serialize(conteo);
-            return nuevoNumeroPedido;
-        }
-        public int DisminuirUsuarios()
-        {
-            Conteo conteo = DataSource();
-
-            int nuevoNumeroUsuarios = --conteo.Usuarios;
-
-            Serialize(conteo);
-            return nuevoNumeroUsuarios;
-        }
+        }                        
         private void Serialize(Conteo conteo)
         {
             /* ------------------- Serialize Method -----------------------*/
