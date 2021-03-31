@@ -186,8 +186,11 @@ namespace RestTEC.Models
             var localPedido = Delete(pedido.Orden);
             if (localPedido != null)
             {
-                Insert(localPedido);
-                return localPedido;
+                List<Pedido> pedidosList = DataSource(); // Base de datos actual deserealizada
+                pedidosList.Add(pedido);
+                Serialize(pedidosList);
+                
+                return pedido;
             }
             return null;
         }

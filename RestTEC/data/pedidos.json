@@ -1,1 +1,84 @@
-[{"Chef":"No asignado","Platillos":[{"Codigo":1,"Nombre":"Frijoles","Precio":500.0,"Descripcion":"Frijolitos","Calorias":50.0,"Tipo":"Harina","Puntuacion":0.0,"NumeroVentas":15,"TiempoPreparacion":5.0,"Feedback":6.0},{"Codigo":2,"Nombre":"Arroz","Precio":250.0,"Descripcion":"Cubero Gay","Calorias":50.0,"Tipo":"Harina","Puntuacion":0.0,"NumeroVentas":13,"TiempoPreparacion":100.0,"Feedback":1.0},{"Codigo":5,"Nombre":"Pollo","Precio":600.0,"Descripcion":"asdasfasfasdf","Calorias":80.0,"Tipo":"Carne","Puntuacion":0.0,"NumeroVentas":8,"TiempoPreparacion":4.0,"Feedback":12.2}],"TiempoPreparacionPromedio":109.0,"EstaListo":false,"Orden":1,"Init":null,"Finish":null,"TiempoPreparacionReal":null}]
+[
+  {
+    "Chef": "No asignado",
+    "Platillos": [
+      {
+        "Codigo": 1,
+        "Nombre": "Frijoles",
+        "Precio": 500.0,
+        "Descripcion": "Frijolitos",
+        "Calorias": 50.0,
+        "Tipo": "Harina",
+        "Puntuacion": 0.0,
+        "NumeroVentas": 15,
+        "TiempoPreparacion": 5.0,
+        "Feedback": 6.0
+      },
+      {
+        "Calorias": 123.0,
+        "Codigo": 10,
+        "Descripcion": "123qwd",
+        "Feedback": 3.0,
+        "Nombre": "Sandwich",
+        "NumeroVentas": 12,
+        "Precio": 650.0,
+        "Puntuacion": 0.0,
+        "TiempoPreparacion": 123.0,
+        "Tipo": "Harina"
+      }
+    ],
+    "TiempoPreparacionPromedio": 128.0,
+    "EstaListo": false,
+    "Orden": 3,
+    "Init": null,
+    "Finish": null,
+    "TiempoPreparacionReal": null
+  },
+  {
+    "Chef": "chefsitoGusteau",
+    "Platillos": [
+      {
+        "Codigo": 2,
+        "Nombre": "Arroz",
+        "Precio": 250.0,
+        "Descripcion": "Cubero Gay",
+        "Calorias": 50.0,
+        "Tipo": "Harina",
+        "Puntuacion": 0.0,
+        "NumeroVentas": 13,
+        "TiempoPreparacion": 100.0,
+        "Feedback": 1.0
+      },
+      {
+        "Codigo": 13,
+        "Nombre": "Pastel de Pollo",
+        "Precio": 3495.0,
+        "Descripcion": "Pastel de Pollo en salsa blanca",
+        "Calorias": 300.0,
+        "Tipo": "Plato fuerte",
+        "Puntuacion": 0.0,
+        "NumeroVentas": 0,
+        "TiempoPreparacion": 25.0,
+        "Feedback": 0.0
+      },
+      {
+        "Codigo": 4,
+        "Nombre": "Macarrones",
+        "Precio": 900.0,
+        "Descripcion": "asdasfasfas",
+        "Calorias": 10.0,
+        "Tipo": "Harina",
+        "Puntuacion": 0.0,
+        "NumeroVentas": 2,
+        "TiempoPreparacion": 0.0,
+        "Feedback": 32.0
+      }
+    ],
+    "TiempoPreparacionPromedio": 125.0,
+    "EstaListo": false,
+    "Orden": 2,
+    "Init": "16:22:58",
+    "Finish": null,
+    "TiempoPreparacionReal": null
+  }
+]

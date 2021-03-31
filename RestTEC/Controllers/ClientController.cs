@@ -40,9 +40,9 @@ namespace RestTEC.Controllers
                 string Username = BasicAuthenticationAttribute.UserNameActual;   
                 
                 ClienteBL clientBL = new ClienteBL();
-                Cliente client = clientBL.InsertPedidoACliente(pedido, Username);
+                Cliente client = clientBL.InsertPedidoAClienteByOrderNumber(pedido.Orden, Username);
 
-                return Request.CreateResponse(HttpStatusCode.OK, client);
+                return Request.CreateResponse(HttpStatusCode.OK, pedido);
 
             }
         }

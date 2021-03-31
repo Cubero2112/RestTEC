@@ -19,10 +19,9 @@ namespace RestTEC.Models
         public int DiaNacimiento { get; set; }
         public int MesNacimiento { get; set; }
         public int AnioNacimiento { get; set; }
-        public int Telefono { get; set; }
-        public int Orden { get; set; }
-        public Pedido PedidoActual { get; set; }
-        public Pedido[] HistorialPedidos { get; set; }
+        public int Telefono { get; set; }        
+        public int[] OrdenesActuales { get; set; }
+        public int[] HistorialOrdenesRealizadas { get; set; }
 
     }
     public class ClienteBL
@@ -83,7 +82,7 @@ namespace RestTEC.Models
             }
             
         }
-        public Cliente InsertPedidoACliente(Pedido newPedido, string UserName)
+        public Cliente InsertPedidoAClienteByOrderNumber(int numeroOrden, string UserName)
         {
             Cliente actualClient = GetById(UserName);
 
@@ -93,25 +92,57 @@ namespace RestTEC.Models
             }
             else
             {
-                if (actualClient.HistorialPedidos == null)
+                if (actualClient.HistorialOrdenesRealizadas == null)
                 {
-                    actualClient.HistorialPedidos = new Pedido[] { newPedido };
+                    actualClient.HistorialOrdenesRealizadas = new int[] { numeroOrden };
                 }
                 else
                 {
-                    var HistorialPedidos = actualClient.HistorialPedidos.ToList();
-                    HistorialPedidos.Add(newPedido);
-                    actualClient.HistorialPedidos = HistorialPedidos.ToArray();
+                    var HistorialPedidos = actualClient.HistorialOrdenesRealizadas.ToList();
+                    HistorialPedidos.Add(numeroOrden);
+                    actualClient.HistorialOrdenesRealizadas = HistorialPedidos.ToArray();
                 }
 
-                actualClient.PedidoActual = newPedido;
-                actualClient.Orden = newPedido.Orden;
 
+                if (actualClient.OrdenesActuales == null)
+                {
+                    actualClient.OrdenesActuales = new int[] { numeroOrden };
+                }
+                else
+                {
+                    var ordenesActuales = actualClient.OrdenesActuales.ToList();
+                    ordenesActuales.Add(numeroOrden);
+                    actualClient.OrdenesActuales = ordenesActuales.ToArray();
+                }
+                                
 
                 Update(actualClient);
                 return actualClient;
             }
             
+        }
+        public int RemoveActualPedido(int numeroOrden)
+        {
+            List<Cliente> clients = DataSource();
+
+            for(int i = 0; i < clients.Count; i++)
+            {
+                if ( clients[i].OrdenesActuales != null || clients[i].OrdenesActuales.Length != 0)
+                {
+                    if(clients[i].OrdenesActuales.ToList().Any(orden => orden == numeroOrden))
+                    {
+                        var listaOrdenes = clients[i].OrdenesActuales.ToList();
+                        listaOrdenes.Remove(numeroOrden);
+                        clients[i].OrdenesActuales = listaOrdenes.ToArray();
+                        break;
+
+                    }
+                }
+            }
+
+            Serialize(clients);
+
+            return numeroOrden;
         }
         public Cliente GetById(string clientUserName) 
         {
