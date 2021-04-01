@@ -14,7 +14,8 @@ namespace RestTEC.Authentication
             UserBL userBL = new UserBL();
             var UserLists = userBL.GetUsers();
             return UserLists.Any(user =>
-                user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
+                //user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
+                user.UserName.Equals(username)
                 && user.Password == password);
         }
 
@@ -23,7 +24,8 @@ namespace RestTEC.Authentication
         {
             UserBL userBL = new UserBL();
             return userBL.GetUsers().FirstOrDefault(user =>
-                user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
+                //user.UserName.Equals(username, StringComparison.OrdinalIgnoreCase)
+                user.UserName.Equals(username)
                 && user.Password == password);
         }
     }

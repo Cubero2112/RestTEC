@@ -95,12 +95,15 @@
     <Compile Include="Authentication\MyAuthorizeAttribute.cs" />
     <Compile Include="Authentication\UserValidate.cs" />
     <Compile Include="Controllers\AdmiController.cs" />
+    <Compile Include="Controllers\ChefController.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
-    <Compile Include="Controllers\UserRegistrationController.cs" />
+    <Compile Include="Controllers\ClientRegistrationController.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Conteo.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\Pedido.cs" />
@@ -120,8 +123,8 @@
     <Content Include="data\clientes.json" />
     <Content Include="data\pedidos.json" />
     <Content Include="data\platillos.json" />
-    <Content Include="data\reportes.json" />
     <Content Include="data\menu.json" />
+    <Content Include="data\conteos.json" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

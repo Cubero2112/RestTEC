@@ -1,23 +1,32 @@
 [
   {
     "Email": "correoAdmi@a.com",
-    "ID": 1,
     "Password": "contraDelAdmi",
     "Roles": "Admin",
     "UserName": "ApuElEmprendedor"
   },
   {
-    "ID": 2,
-    "UserName": "chef",
+    "UserName": "chefsitoGusteau",
     "Password": "cualquieraPuedeCocinar1234",
     "Roles": "Chef",
     "Email": "elFrances@a.com"
   },
   {
-    "ID": 3,
     "UserName": "admin",
     "Password": "admin1",
-    "Roles": "admin",
+    "Roles": "Admin",
     "Email": "admin@test.com"
+  },
+  {
+    "UserName": "Cubero2112",
+    "Password": "contraseMuySegura1234",
+    "Roles": "Client",
+    "Email": "josuecub.mont@hotmail.com"
+  },
+  {
+    "UserName": "jorgeEagle33",
+    "Password": "contraVientoMarea",
+    "Roles": "Client",
+    "Email": "josuecub.mont@hotmail.com"
   }
 ]

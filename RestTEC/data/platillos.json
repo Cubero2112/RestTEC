@@ -3,7 +3,7 @@
     "Calorias": 50.0,
     "Codigo": 1,
     "Descripcion": "Frijolitos",
-    "Feedback": 6.0,
+    "Feedback": 0.0,
     "Nombre": "Frijoles",
     "NumeroVentas": 15,
     "Precio": 500.0,
@@ -21,7 +21,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 13,
     "TiempoPreparacion": 100.0,
-    "Feedback": 1.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 3,
@@ -33,7 +33,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 3,
     "TiempoPreparacion": 5.0,
-    "Feedback": 2.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 4,
@@ -45,7 +45,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 2,
     "TiempoPreparacion": 0.0,
-    "Feedback": 32.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 5,
@@ -69,7 +69,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 11,
     "TiempoPreparacion": 1.0,
-    "Feedback": 6.6
+    "Feedback": 0.0
   },
   {
     "Codigo": 7,
@@ -81,7 +81,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 6,
     "TiempoPreparacion": 3123.0,
-    "Feedback": 98.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 8,
@@ -93,7 +93,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 4,
     "TiempoPreparacion": 12312312.0,
-    "Feedback": 12.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 9,
@@ -105,7 +105,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 10,
     "TiempoPreparacion": 3123.0,
-    "Feedback": 12.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 10,
@@ -117,7 +117,7 @@
     "Puntuacion": 0.0,
     "NumeroVentas": 12,
     "TiempoPreparacion": 123.0,
-    "Feedback": 3.0
+    "Feedback": 0.0
   },
   {
     "Codigo": 11,
@@ -142,5 +142,29 @@
     "NumeroVentas": 0,
     "TiempoPreparacion": 2.0,
     "Feedback": 0.0
+  },
+  {
+    "Codigo": 13,
+    "Nombre": "Pastel de Pollo",
+    "Precio": 3495.0,
+    "Descripcion": "Pastel de Pollo en salsa blanca",
+    "Calorias": 300.0,
+    "Tipo": "Plato fuerte",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 0,
+    "TiempoPreparacion": 25.0,
+    "Feedback": 0.0
+  },
+  {
+    "Codigo": 14,
+    "Nombre": "Costilla de Cerdo",
+    "Precio": 5490.0,
+    "Descripcion": "Costilla de Cerdo en salsa BBQ",
+    "Calorias": 800.0,
+    "Tipo": "Plato fuerte",
+    "Puntuacion": 0.0,
+    "NumeroVentas": 0,
+    "TiempoPreparacion": 30.0,
+    "FeedBack": 0.0
   }
 ]
