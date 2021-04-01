@@ -17,5 +17,4 @@ export class NavbarAdminComponent implements OnInit {
   	localStorage.removeItem("rol");
   	localStorage.removeItem("user");
   }
-
 }

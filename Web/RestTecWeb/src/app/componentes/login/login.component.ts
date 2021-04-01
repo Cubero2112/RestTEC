@@ -27,19 +27,15 @@ export class LoginComponent implements OnInit {
     Token:null
   }
 
-
-
   ngOnInit(){
-
-
 
     if(localStorage.getItem("user") != null ){
       if(localStorage.getItem("rol") =="admin"){
         this.router.navigate(["admin/platos"]);
       }
       
-      else if(localStorage.getItem("rol") == "chef"){
-        this.router.navigate(["chef"]);
+      if(localStorage.getItem("rol") == "Chef"){
+        this.router.navigate(["chef/pedidos"]);
       }
     }
 
@@ -60,10 +56,10 @@ export class LoginComponent implements OnInit {
     if(localStorage.getItem("rol") == "admin"){
       this.router.navigate(['admin/platos']);
     }
-    else if(localStorage.getItem("rol") == "chef"){
-      alert("Es un chef");
-    }
-  }
-  
+    else if(localStorage.getItem("rol") == "Chef"){
+      this.router.navigate(['chef/pedidos']);
+
+     }
+  }  
 
 }
