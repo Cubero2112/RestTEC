@@ -12,4 +12,9 @@ export class NavbarChefComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  salir(){
+  	localStorage.removeItem("rol");
+  	localStorage.removeItem("user");
+  }
+
 }

@@ -26,7 +26,7 @@ export class ReportesComponent implements OnInit {
   public datosAMostrar = [];
 
   ngOnInit(): void {
-  	if(localStorage.getItem("rol") == "admin"){
+  	if(localStorage.getItem("rol") == "Admin"){
 
       this.dataApi.getReportes()
       .subscribe((response:ReportesInterface) => this.cargarDatos(response));

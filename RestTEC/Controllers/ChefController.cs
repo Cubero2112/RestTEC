@@ -39,13 +39,13 @@ namespace RestTEC.Controllers
 
         [HttpPost]
         [Route("chef/InitPedido")]
-        public HttpResponseMessage InitPedido([FromBody] Pedido pedidoWeb)
+        public HttpResponseMessage InitPedido([FromBody]Pedido pedidoWeb)
         {
-            PedidoLogic pedidoLogic = new PedidoLogic();
+            PedidoLogic pedidoLogic = new PedidoLogic();            
 
             string Username = BasicAuthenticationAttribute.UserNameActual;
 
-            Pedido pedido = pedidoLogic.InitPedido(pedidoWeb.Orden, Username);
+            Pedido pedido = pedidoLogic.InitPedido(pedidoWeb.Orden,Username);
 
             return Request.CreateResponse(HttpStatusCode.OK, pedido);
         }
@@ -60,7 +60,7 @@ namespace RestTEC.Controllers
             string Username = BasicAuthenticationAttribute.UserNameActual;
 
             Pedido pedido = pedidoLogic.FinishPedido(pedidoWeb.Orden, Username);
-            if (pedido == null)
+            if(pedido == null)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }

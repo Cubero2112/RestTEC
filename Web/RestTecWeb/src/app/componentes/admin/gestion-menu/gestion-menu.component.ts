@@ -22,7 +22,7 @@ export class GestionMenuComponent implements OnInit {
   public numeroDePlatos:number;
 
   ngOnInit(): void {
-  	if(localStorage.getItem("rol") == "admin"){
+  	if(localStorage.getItem("rol") == "Admin"){
       this.obtenerMenu();
     }
     else{
