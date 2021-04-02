@@ -142,7 +142,7 @@ namespace RestTEC.Models
                 return null; 
             }
             ConteoBL conteoBL = new ConteoBL();
-            int numeroPlatillos = conteoBL.DisminuirPlatillos();
+            //int numeroPlatillos = conteoBL.DisminuirPlatillos();
 
             pedidosList.Remove(platillo);
             Serialize(pedidosList); //Almacenamos la ultima version de la base de datos

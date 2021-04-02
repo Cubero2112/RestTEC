@@ -32,7 +32,7 @@ constructor( private http:HttpClient) { }
 
 
  obtenerTodosPlatos(){
- 	const url_api = "https://localhost:44381/getPlatillos";
+ 	const url_api = "https://localhost:44381/admi/getPlatillos";
  	return this.http.get(url_api,{headers:this.headers});
  }
 

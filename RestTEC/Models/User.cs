@@ -103,7 +103,7 @@ namespace RestTEC.Models
             }
 
             ConteoBL conteoBL = new ConteoBL();
-            int numeroUser = conteoBL.DisminuirUsuarios();
+            //int numeroUser = conteoBL.DisminuirUsuarios();
 
 
             userList.Remove(user);

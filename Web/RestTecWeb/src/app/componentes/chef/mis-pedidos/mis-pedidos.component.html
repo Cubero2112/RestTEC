@@ -1,2 +1,17 @@
 <app-navbar-chef></app-navbar-chef>
-<p>Mis pedidos</p>
+
+<div class="container col-5 mt-3">
+	<div class="list-group">
+	  <a  class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let pedido of pedidos; let i = index">
+	  <div class="d-flex w-100 justify-content-between">
+	      <h5 class="mb-1">Orden n° {{pedido.Orden}}</h5>
+	      <small>{{pedido.EstaListo ? 'Pedido finalizado' : 'Pedido pendiente'}}</small>
+	    </div>
+	    <p class="mb-1" *ngFor="let platillo of pedido.Platillos; let a = index"> {{platillo.Nombre}}</p>
+	    <small class="text-muted">Tiempo estimado de preparacion: {{pedido.TiempoPreparacionPromedio}} minutos</small>
+	    <p align="right">
+	    	<button (click)="finalizar(pedido.Orden)" class="btn btn-primary ml-5"> Finalizar </button>
+	    </p>
+	  </a>
+	</div>
+</div>

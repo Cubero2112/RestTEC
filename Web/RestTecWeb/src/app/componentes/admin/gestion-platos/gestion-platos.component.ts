@@ -18,7 +18,7 @@ export class GestionPlatosComponent implements OnInit {
   private Location: Location;
 
   ngOnInit(): void {
-    if(localStorage.getItem("rol") == "admin"){
+    if(localStorage.getItem("rol") == "Admin"){
       this.obtenerPlatosServidor();
     }
     else{
