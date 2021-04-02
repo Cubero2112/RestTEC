@@ -41,7 +41,7 @@ namespace RestTEC.Models
         public List<Platillo> GetAll()
         {
             //(R) GET
-            
+
             return DataSource();
         }
         public Platillo Insert(Platillo platillo)
@@ -49,7 +49,7 @@ namespace RestTEC.Models
             //(C) POST                         
             List<Platillo> platilloList = DataSource(); // Base de datos actual deserealizada
 
-            if( (0 < platillo.Precio) && (platillo.Descripcion.Length <= 100) && (0 < platillo.Calorias))
+            if ((0 < platillo.Precio) && (platillo.Descripcion.Length <= 100) && (0 < platillo.Calorias))
             {
                 ConteoBL conteoBL = new ConteoBL();
                 int actualNumeroPlatillos = conteoBL.AumentarPlatillos();
@@ -65,13 +65,13 @@ namespace RestTEC.Models
                 return null;
             }
 
-            
+
         }
         public Platillo GetByCodigo(int Codigo)
         {
             //(R) GET
             Platillo platillo = DataSource().FirstOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
-            if(platillo== null)
+            if (platillo == null)
             {
                 return null;
             }
@@ -85,7 +85,7 @@ namespace RestTEC.Models
             if (oldPlatillo != null)
             {
                 actualPlatillo = Insert(actualPlatillo);
-                if(actualPlatillo != null) //Indica que se hizo la insercion (El nuevo platillo cumplia con lo necesario)
+                if (actualPlatillo != null) //Indica que se hizo la insercion (El nuevo platillo cumplia con lo necesario)
                 {
 
                     return oldPlatillo;
@@ -102,10 +102,10 @@ namespace RestTEC.Models
             }
         }
         public Platillo UpdateNumeroVentas(int Codigo)
-        {            
+        {
             Platillo platillo = DataSource().FirstOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
 
-            if(platillo == null)
+            if (platillo == null)
             {
                 return null;
             }
@@ -114,12 +114,12 @@ namespace RestTEC.Models
                 platillo.NumeroVentas++;
                 Update(platillo);
                 return platillo;
-            }            
+            }
         }
         public Platillo UpdateFeedBack(int Codigo, double Feedback)
         {
             Platillo platillo = DataSource().FirstOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
-            if(platillo != null && 0 < Feedback)
+            if (platillo != null && 0 < Feedback)
             {
                 platillo.Feedback = (platillo.Feedback + Feedback) / 2;
                 Platillo oldPlatillo = Update(platillo);
@@ -133,16 +133,16 @@ namespace RestTEC.Models
         public Platillo Delete(int Codigo)
         {
             //(D) DELETE
-            
+
             List<Platillo> pedidosList = DataSource(); // Base de datos actual
 
             Platillo platillo = pedidosList.SingleOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
             if (platillo == null)
             {
-                return null; 
+                return null;
             }
             ConteoBL conteoBL = new ConteoBL();
-            int numeroPlatillos = conteoBL.DisminuirPlatillos();
+            //int numeroPlatillos = conteoBL.DisminuirPlatillos();
 
             pedidosList.Remove(platillo);
             Serialize(pedidosList); //Almacenamos la ultima version de la base de datos

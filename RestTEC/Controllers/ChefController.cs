@@ -38,33 +38,33 @@ namespace RestTEC.Controllers
 
 
         [HttpPost]
-        [Route("chef/InitPedido/{numeroOrden}")]
-        public HttpResponseMessage InitPedido(int numeroOrden)
+        [Route("chef/InitPedido")]
+        public HttpResponseMessage InitPedido([FromBody] Pedido pedidoWeb)
         {
-            PedidoLogic pedidoLogic = new PedidoLogic();            
+            PedidoLogic pedidoLogic = new PedidoLogic();
 
             string Username = BasicAuthenticationAttribute.UserNameActual;
 
-            Pedido pedido = pedidoLogic.InitPedido(numeroOrden,Username);
+            Pedido pedido = pedidoLogic.InitPedido(pedidoWeb.Orden, Username);
 
             return Request.CreateResponse(HttpStatusCode.OK, pedido);
         }
 
         [HttpPost]
-        [Route("chef/FinishPedido/{numeroOrden}")]
-        public HttpResponseMessage FinishPedido(int numeroOrden)
+        [Route("chef/FinishPedido")]
+        public HttpResponseMessage FinishPedido([FromBody] Pedido pedidoWeb)
         {
             PedidoLogic pedidoLogic = new PedidoLogic();
             ClienteBL clienteBL = new ClienteBL();
 
             string Username = BasicAuthenticationAttribute.UserNameActual;
 
-            Pedido pedido = pedidoLogic.FinishPedido(numeroOrden, Username);
-            if(pedido == null)
+            Pedido pedido = pedidoLogic.FinishPedido(pedidoWeb.Orden, Username);
+            if (pedido == null)
             {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             }
-            int numeroOrdenLista = clienteBL.RemoveActualPedido(numeroOrden);
+            int numeroOrdenLista = clienteBL.RemoveActualPedido(pedidoWeb.Orden);
 
             return Request.CreateResponse(HttpStatusCode.OK, pedido);
         }
