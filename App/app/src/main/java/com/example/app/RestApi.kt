@@ -8,4 +8,5 @@ interface RestApi {
         @Headers("Content-Type: application/json")
         @POST("users")
         fun addUser(@Body userData: Users): Call<Users>
+        fun vefiqueUser(@Body userData: Users): Call<Users>
 }

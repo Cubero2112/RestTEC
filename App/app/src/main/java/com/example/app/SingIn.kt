@@ -47,7 +47,8 @@ class SingIn: AppCompatActivity() {
             startActivity(intent)
 
             val apiService = RestApiService()
-            val userInfo = Users(  userName = nombre,
+            val userInfo = Users(
+                    userName = nombre,
                 userFName = p_apellido,
                 userLName = s_apellido,
                 userID = cedula,
@@ -58,8 +59,6 @@ class SingIn: AppCompatActivity() {
 
             apiService.addUser(userInfo) {
                 if (it?.userName != null) {
-                    // it = newly added user parsed as response
-                    // it?.id = newly added user ID
                 } else {
                     Timber.d("Error registering new user")
                 }
