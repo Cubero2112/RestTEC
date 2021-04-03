@@ -10,7 +10,7 @@ using System.Web;
 namespace RestTEC.Models
 {
     public class User
-    {        
+    {
         public string UserName { get; set; }
         public string Password { get; set; }
         public string Roles { get; set; }
@@ -28,7 +28,7 @@ namespace RestTEC.Models
             /* --------------------------------- SourceData Method -----------------------------------*/
             var jsonString = File.ReadAllText(jsonFilePath);
 
-           
+
 
             User[] users = JsonConvert.DeserializeObject<User[]>(jsonString);
 
@@ -69,9 +69,9 @@ namespace RestTEC.Models
             return newUser;
         }
         public UserToken UserLogin(User userLogin)
-        {            
-            var userFound = UserValidate.Login(userLogin.UserName, userLogin.Password); 
-            if(userFound) //Si el usuario ya se encuentra registrado en la base de datos se le daran sus credenciales (Token)
+        {
+            var userFound = UserValidate.Login(userLogin.UserName, userLogin.Password);
+            if (userFound) //Si el usuario ya se encuentra registrado en la base de datos se le daran sus credenciales (Token)
             {
                 var userInDB = UserValidate.GetUserDetails(userLogin.UserName, userLogin.Password);
 
