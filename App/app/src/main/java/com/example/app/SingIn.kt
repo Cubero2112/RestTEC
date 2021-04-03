@@ -5,10 +5,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.login.*
+import kotlinx.android.synthetic.main.singin.*
 import timber.log.Timber
 
-class LogIn: AppCompatActivity() {
+class SingIn: AppCompatActivity() {
 
     var usuarios_registrados_r = ArrayList<String>()
     var contrsenas_registradas_r = ArrayList<String>()
@@ -16,7 +16,7 @@ class LogIn: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.login)
+        setContentView(R.layout.singin)
 
         inputfechac.setOnClickListener{ SelecciondeFecha() }
 
@@ -91,60 +91,3 @@ class LogIn: AppCompatActivity() {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-//Se declaran las variables para la sección de los spinner de provincia, canton y  dsitrito
-        val provincia = findViewById<Spinner>(R.id.spnprovincia)
-        val canton = findViewById<Spinner>(R.id.spncanton)
-        val distrito = findViewById<Spinner>(R.id.spndistrito)
-
-        //Se toman las listas de arrays creadas en la sección de values/strings del proyecto para
-        //poder trabajar con ellos y mostrar lo que estan almacenan en la interfaz
-        val provincias_lista = resources.getStringArray(R.array.provincias)
-
-        val opciones_provincias = ArrayAdapter(this,android.R.layout.simple_spinner_dropdown_item, provincias_lista)
-        provincia.adapter = opciones_provincias
-
-        //Se implementa la función propia del spinner para cuando sea seleccionado un elemento del mismo
-        provincia.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
-            //Función implementada cuando es seleccionado uno de los elementos del spinner de provincias
-            //El elemento importante es el id, ya que este dará la posición en el array de opciones
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
-                //Se selecciona la primera letra de la opción de provincia, ya que para esto
-                //Se tiene que llamar de inmediato el spinner de los cantones según dicha provincia
-                //El array de cantones tiene por nombre Iniicial de Provincia en Mayúscula + cantones
-                val seleccion = provincias_lista[position].first().toString() + "cantones"
-                Toast.makeText(this@Registrarse, seleccion,Toast.LENGTH_LONG).show()
-
-            }
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
-            }
-        }
-* */

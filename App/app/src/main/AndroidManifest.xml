@@ -18,7 +18,7 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
-        <activity android:name=".LogIn" />
+        <activity android:name=".SingIn" />
         <activity android:name=".Carrito" />
         <activity android:name=".Pedidos" />
         <activity android:name=".Visualizar" />

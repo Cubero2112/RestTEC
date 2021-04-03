@@ -45,7 +45,7 @@ class Main : AppCompatActivity() {
         }
 
         btnregistrarse.setOnClickListener {
-            startActivity(Intent(this, LogIn::class.java))
+            startActivity(Intent(this, SingIn::class.java))
         }
     }
 }
