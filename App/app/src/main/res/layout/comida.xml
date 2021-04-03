@@ -43,6 +43,22 @@
             android:background="#FF5722"
             android:text="Calorias_platillo" />
 
+        <TextView
+            android:id="@+id/lblfeedback"
+            android:layout_width="171dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#FF5722"
+            android:text="Comentario_platillo" />
+
+        <TextView
+            android:id="@+id/lbltiempo"
+            android:layout_width="152dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#FF5722"
+            android:text="tiemppo_preparacion" />
+
     </LinearLayout>
 
 </LinearLayout>

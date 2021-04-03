@@ -37,11 +37,15 @@ class Comidas: AppCompatActivity() {
         val descripcion_menu = findViewById<TextView>(R.id.lbldes) as TextView
         val precio_menu = findViewById<TextView>(R.id.lblprecio) as TextView
         val calorias_menu = findViewById<TextView>(R.id.lblcalorias) as TextView
+        val feedback_menu = findViewById<TextView>(R.id.lblfeedback) as TextView
+        val tiempo_menu = findViewById<TextView>(R.id.lbltiempo) as TextView
 
         nombre_menu.setText(platillo.get(numero_platillo).nombre)
         descripcion_menu.setText(platillo.get(numero_platillo).descripcion)
         precio_menu.setText(platillo.get(numero_platillo).precio.toString())
         calorias_menu.setText(platillo.get(numero_platillo).calorias.toString())
+        feedback_menu.setText(platillo.get(numero_platillo).feedback)
+        tiempo_menu.setText(platillo.get(numero_platillo).tiempo.toString())
 
         btnatras.setOnClickListener {
             if (numero_platillo <= 0){
@@ -53,6 +57,8 @@ class Comidas: AppCompatActivity() {
                 descripcion_menu.setText(platillo.get(numero_platillo).descripcion)
                 precio_menu.setText(platillo.get(numero_platillo).precio.toString())
                 calorias_menu.setText(platillo.get(numero_platillo).calorias.toString())
+                feedback_menu.setText((platillo.get(numero_platillo).feedback))
+                tiempo_menu.setText(platillo.get(numero_platillo).tiempo.toString())
             }
         }
 
@@ -66,6 +72,9 @@ class Comidas: AppCompatActivity() {
                 descripcion_menu.setText(platillo.get(numero_platillo).descripcion)
                 precio_menu.setText(platillo.get(numero_platillo).precio.toString())
                 calorias_menu.setText(platillo.get(numero_platillo).calorias.toString())
+                feedback_menu.setText(platillo.get(numero_platillo).feedback)
+                tiempo_menu.setText(platillo.get(numero_platillo).tiempo.toString())
+
             }
         }
 
