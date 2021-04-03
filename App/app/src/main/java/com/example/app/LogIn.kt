@@ -47,7 +47,7 @@ class LogIn: AppCompatActivity() {
             startActivity(intent)
 
             val apiService = RestApiService()
-            val userInfo = Users(  userName = "",
+            val userInfo = Users(  userName = nombre,
                 userFName = p_apellido,
                 userLName = s_apellido,
                 userID = cedula,
