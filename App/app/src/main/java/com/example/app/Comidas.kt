@@ -36,10 +36,12 @@ class Comidas: AppCompatActivity() {
         val nombre_menu = findViewById<TextView>(R.id.lblmenu) as TextView
         val descripcion_menu = findViewById<TextView>(R.id.lbldes) as TextView
         val precio_menu = findViewById<TextView>(R.id.lblprecio) as TextView
+        val calorias_menu = findViewById<TextView>(R.id.lblcalorias) as TextView
 
         nombre_menu.setText(platillo.get(numero_platillo).nombre)
         descripcion_menu.setText(platillo.get(numero_platillo).descripcion)
         precio_menu.setText(platillo.get(numero_platillo).precio.toString())
+        calorias_menu.setText(platillo.get(numero_platillo).calorias.toString())
 
         btnatras.setOnClickListener {
             if (numero_platillo <= 0){
@@ -50,6 +52,7 @@ class Comidas: AppCompatActivity() {
                 nombre_menu.setText(platillo.get(numero_platillo).nombre)
                 descripcion_menu.setText(platillo.get(numero_platillo).descripcion)
                 precio_menu.setText(platillo.get(numero_platillo).precio.toString())
+                calorias_menu.setText(platillo.get(numero_platillo).calorias.toString())
             }
         }
 
@@ -62,6 +65,7 @@ class Comidas: AppCompatActivity() {
                 nombre_menu.setText(platillo.get(numero_platillo).nombre)
                 descripcion_menu.setText(platillo.get(numero_platillo).descripcion)
                 precio_menu.setText(platillo.get(numero_platillo).precio.toString())
+                calorias_menu.setText(platillo.get(numero_platillo).calorias.toString())
             }
         }
 

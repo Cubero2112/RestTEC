@@ -35,6 +35,14 @@
             android:background="#FF5722"
             android:text="Costo_platillo" />
 
+        <TextView
+            android:id="@+id/lblcalorias"
+            android:layout_width="119dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="#FF5722"
+            android:text="Calorias_platillo" />
+
     </LinearLayout>
 
 </LinearLayout>

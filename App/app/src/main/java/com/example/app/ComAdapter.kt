@@ -34,6 +34,7 @@ class ComAdapter(val platillo:List<Platos>, private val contexto: Context):Recyc
             view.lblnombreplatillo.text = platillo.nombre
             view.lbldescripcion.text = platillo.descripcion
             view.lblcosto.text = platillo.precio.toString()
+            view.lblcalorias.text = platillo.calorias.toString()
             view.setOnClickListener {
 
                 if(platillo.descripcion == "ACEPTAR"){

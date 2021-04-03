@@ -35,7 +35,9 @@ class Feedback : AppCompatActivity(){
             }
 
         btnenviar.setOnClickListener {
-            //Aquí se envian los datos JSON al Rest
+            //Aquí se envian los datos JSON
+            
+
             }
         }
     }
