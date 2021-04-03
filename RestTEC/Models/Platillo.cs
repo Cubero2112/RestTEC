@@ -17,7 +17,7 @@ namespace RestTEC.Models
         public string Tipo { get; set; }
         public double Puntuacion { get; set; }
         public int NumeroVentas { get; set; }
-        public double TiempoPreparacion { get; set; }
+        public double TiempoPreparacion { get; set;}
         public double Feedback { get; set; }
     }
 
@@ -29,13 +29,10 @@ namespace RestTEC.Models
             /* --------------------------------- SourceData Method -----------------------------------*/
             var jsonString = File.ReadAllText(jsonFilePath);
 
-            //Console.WriteLine(jsonString);
-
             Platillo[] platillos = JsonConvert.DeserializeObject<Platillo[]>(jsonString);
 
             List<Platillo> platillosList = platillos.ToList();
             /* --------------------------------- SourceData Method -----------------------------------*/
-
             return platillosList;
         }
         public List<Platillo> GetAll()
@@ -44,15 +41,29 @@ namespace RestTEC.Models
 
             return DataSource();
         }
+        public Platillo GetByCodigo(int Codigo)
+        {
+            //(R) GET
+            Platillo platillo = DataSource().FirstOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
+            if (platillo == null)
+            {
+                return null;
+            }
+            return platillo;
+        }
         public Platillo Insert(Platillo platillo)
         {
             //(C) POST                         
             List<Platillo> platilloList = DataSource(); // Base de datos actual deserealizada
 
-            if ((0 < platillo.Precio) && (platillo.Descripcion.Length <= 100) && (0 < platillo.Calorias))
+            string nombre = platillo.Nombre;
+            string descripcion = platillo.Descripcion;
+            double precio = platillo.Precio;
+            double calorias = platillo.Calorias;
+            
+            if ((0 < precio) && (descripcion.Length <= 100) && (0 < calorias) && (nombre.Length <= 20))
             {
-                ConteoBL conteoBL = new ConteoBL();
-                int actualNumeroPlatillos = conteoBL.AumentarPlatillos();
+                int actualNumeroPlatillos = ConteoBL.AumentarPlatillos();
 
                 platillo.Codigo = actualNumeroPlatillos;
                 platilloList.Add(platillo);
@@ -67,36 +78,41 @@ namespace RestTEC.Models
 
 
         }
-        public Platillo GetByCodigo(int Codigo)
+        public Platillo Update(Platillo platilloNuevaVersion)
         {
-            //(R) GET
-            Platillo platillo = DataSource().FirstOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
-            if (platillo == null)
-            {
-                return null;
-            }
-            return platillo;
-        }
-        public Platillo Update(Platillo actualPlatillo)
-        {
-            //(U) PUT                        
-            var oldPlatillo = Delete(actualPlatillo.Codigo);
+            //(U) PUT
+            string nombre = platilloNuevaVersion.Nombre;
+            string descripcion = platilloNuevaVersion.Descripcion;
+            double precio = platilloNuevaVersion.Precio;
+            double calorias = platilloNuevaVersion.Calorias;
+            int codigo = platilloNuevaVersion.Codigo;
 
-            if (oldPlatillo != null)
+            if ((0 < precio) && (descripcion.Length <= 100) && (0 < calorias) && (nombre.Length <= 20))
             {
-                actualPlatillo = Insert(actualPlatillo);
-                if (actualPlatillo != null) //Indica que se hizo la insercion (El nuevo platillo cumplia con lo necesario)
-                {
+                if (GetByCodigo(codigo) != null) {
+                    List<Platillo> platillosList = GetAll();
 
-                    return oldPlatillo;
+                    Platillo platilloARemplazar = platillosList.SingleOrDefault(singlePlatillo => singlePlatillo.Codigo == codigo);
+
+                    int indexOfPlatilloARemplazar = platillosList.IndexOf(platilloARemplazar);
+
+                    if(indexOfPlatilloARemplazar != -1)
+                    {
+
+                        platillosList[indexOfPlatilloARemplazar] = platilloNuevaVersion;
+                        Serialize(platillosList);
+                        return platilloARemplazar;
+                    }
+                    else // No se puede realizar el update pues no se encontro en la DB el platillo que se quiere actualizar.
+                    {
+                        return null;
+                    }
                 }
-                else //Indica que no se hizo la insercion (El platillo tenia valores no validos para poder la insercion)
+                else // No se pudo realizar el update pues en realidad no existe el item que se quiere actualizar en la base de datos
                 {
-                    Insert(oldPlatillo);
                     return null;
                 }
-            }
-            else
+            }else // No se pudo realizar el update pues el nuevo platillo no cumple con los requisitos necesarios.
             {
                 return null;
             }
@@ -133,22 +149,21 @@ namespace RestTEC.Models
         public Platillo Delete(int Codigo)
         {
             //(D) DELETE
-
             List<Platillo> pedidosList = DataSource(); // Base de datos actual
 
             Platillo platillo = pedidosList.SingleOrDefault(singlePlatillo => singlePlatillo.Codigo == Codigo);
-            if (platillo == null)
+
+            if (platillo != null)
+            {             
+                pedidosList.Remove(platillo);
+                Serialize(pedidosList); //Almacenamos la ultima version de la base de datos
+
+                return platillo; //Se retorna el platillo eliminado como convension para que se sepa que el mismo si existia en la base de datos
+            }
+            else
             {
                 return null;
             }
-            ConteoBL conteoBL = new ConteoBL();
-            //int numeroPlatillos = conteoBL.DisminuirPlatillos();
-
-            pedidosList.Remove(platillo);
-            Serialize(pedidosList); //Almacenamos la ultima version de la base de datos
-
-            return platillo; //Se retorna el platillo eliminado como convension para que se sepa que el mismo si existia en la base de datos
-
         }
         private void Serialize(List<Platillo> platillosList)
         {

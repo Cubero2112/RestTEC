@@ -138,11 +138,8 @@ namespace RestTEC.Models
                         listaOrdenes.Remove(numeroOrden);
                         clients[i].OrdenesActuales = listaOrdenes.ToArray();
                         break;
-                    }
-                
-
+                    }                
                 }
-
             }
 
             Serialize(clients);
@@ -168,8 +165,7 @@ namespace RestTEC.Models
             {
                 actualClient = Insert(actualClient);
                 if(actualClient != null)
-                {
-                    
+                {                    
                     return oldClient;
                 }
                 else
@@ -186,8 +182,7 @@ namespace RestTEC.Models
         }
         public Cliente Delete(string clientUserName)  
         {
-            //(Delete) DELETE
-            
+            //(Delete) DELETE            
             List<Cliente> clientsList = DataSource();// Relacion Client en su estado actual deserealizada
 
             Cliente client = clientsList.SingleOrDefault(user => user.UserName.Equals(clientUserName));
@@ -200,7 +195,6 @@ namespace RestTEC.Models
             Serialize(clientsList); //Almacenamos la ultima version de la relacion Client
 
             return client; //Se retorna el client como convension para que se sepa que el mismo si existia en la base de datos
-
         }
         private void Serialize(List<Cliente> clientsList)
         {

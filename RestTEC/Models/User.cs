@@ -21,14 +21,8 @@ namespace RestTEC.Models
         private string jsonFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "", "data", "users.json"));
         public List<User> GetUsers()
         {
-            // In Realtime you need to get the data from any persistent storage
-            // For Simplicity of this demo and to keep focus on Basic Authentication
-            // Here we are hardcoded the data
-
             /* --------------------------------- SourceData Method -----------------------------------*/
             var jsonString = File.ReadAllText(jsonFilePath);
-
-
 
             User[] users = JsonConvert.DeserializeObject<User[]>(jsonString);
 
@@ -39,7 +33,7 @@ namespace RestTEC.Models
         }
         public User GetByUserName(string userName)
         {
-            //(Read) GET         
+            //(Read) GET
             User actualUser = GetUsers().FirstOrDefault(user => user.UserName.Equals(userName));
             if (actualUser == null)
             {
@@ -58,9 +52,8 @@ namespace RestTEC.Models
             {
                 return null;
             }
-
-            ConteoBL conteoBL = new ConteoBL();
-            int nuevoUser = conteoBL.AumentarUsuarios();
+            
+            int nuevoUser = ConteoBL.AumentarUsuarios();
 
             userLists.Add(newUser);
 

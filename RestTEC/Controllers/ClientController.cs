@@ -14,7 +14,6 @@ namespace RestTEC.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class ClientController : ApiController
     {
-
         [HttpGet]
         [Route("client/getPlatillos")]
         public HttpResponseMessage GetPlatillos()
@@ -46,7 +45,5 @@ namespace RestTEC.Controllers
 
             }
         }
-
-
     }
 }

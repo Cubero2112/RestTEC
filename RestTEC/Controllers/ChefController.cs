@@ -28,14 +28,11 @@ namespace RestTEC.Controllers
         public HttpResponseMessage GetMisPedidos()
         {
             PedidoLogic pedidoLogic = new PedidoLogic();
-
-            string Username = BasicAuthenticationAttribute.UserNameActual;
-
-            List<Pedido> misPedidos = pedidoLogic.GetChefPedidos(Username);
+            
+            List<Pedido> misPedidos = pedidoLogic.GetChefPedidos();
 
             return Request.CreateResponse(HttpStatusCode.OK, misPedidos);
         }
-
 
         [HttpPost]
         [Route("chef/InitPedido")]
@@ -43,9 +40,7 @@ namespace RestTEC.Controllers
         {
             PedidoLogic pedidoLogic = new PedidoLogic();            
 
-            string Username = BasicAuthenticationAttribute.UserNameActual;
-
-            Pedido pedido = pedidoLogic.InitPedido(pedidoWeb.Orden,Username);
+            Pedido pedido = pedidoLogic.InitPedido(pedidoWeb.Orden);
 
             return Request.CreateResponse(HttpStatusCode.OK, pedido);
         }
@@ -57,12 +52,11 @@ namespace RestTEC.Controllers
             PedidoLogic pedidoLogic = new PedidoLogic();
             ClienteBL clienteBL = new ClienteBL();
 
-            string Username = BasicAuthenticationAttribute.UserNameActual;
 
-            Pedido pedido = pedidoLogic.FinishPedido(pedidoWeb.Orden, Username);
+            Pedido pedido = pedidoLogic.FinishPedido(pedidoWeb.Orden);
             if(pedido == null)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return Request.CreateResponse(HttpStatusCode.NotFound);
             }
             int numeroOrdenLista = clienteBL.RemoveActualPedido(pedidoWeb.Orden);
 

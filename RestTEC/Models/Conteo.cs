@@ -17,9 +17,8 @@ namespace RestTEC.Models
     public class ConteoBL
     {
 
-        private string jsonFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "", "data", "conteos.json"));
-
-        private Conteo DataSource()
+        private static string jsonFilePath = Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "", "data", "conteos.json"));
+        private static Conteo DataSource()
         {
             /* --------------------------------- SourceData Method -----------------------------------*/
             var jsonString = File.ReadAllText(jsonFilePath);
@@ -29,7 +28,7 @@ namespace RestTEC.Models
 
             return conteo;
         }
-        public int AumentarPlatillos()
+        public static int AumentarPlatillos()
         {
             Conteo conteo = DataSource();
             
@@ -39,7 +38,7 @@ namespace RestTEC.Models
 
             return nuevoNumeroPlatillos;
         }
-        public int AumentarPedidos()
+        public static int AumentarPedidos()
         {
             Conteo conteo = DataSource();
 
@@ -48,7 +47,7 @@ namespace RestTEC.Models
             Serialize(conteo);
             return nuevoNumeroPedido;            
         }
-        public int AumentarUsuarios()
+        public static int AumentarUsuarios()
         {
             Conteo conteo = DataSource();
 
@@ -57,7 +56,7 @@ namespace RestTEC.Models
             Serialize(conteo);
             return nuevoNumeroUsuarios;
         }                        
-        private void Serialize(Conteo conteo)
+        private static void Serialize(Conteo conteo)
         {
             /* ------------------- Serialize Method -----------------------*/
             
