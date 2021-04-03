@@ -45,9 +45,15 @@ export class LoginComponent implements OnInit {
     this.loginApi.verficar(this.datosUsuario)
     .subscribe((response:UsuarioInterface)=>
       {
+        console.log(response);
         localStorage.setItem("rol", response.Role);
         localStorage.setItem("user", response.Token);
         this.verficarRol();
+      },
+      (error:any)=>{
+        alert("Usuario o contraseña incorrecta, intente de nuevo");
+        this.datosUsuario.Username = "";
+        this.datosUsuario.Password = "";
       });
 
   }
