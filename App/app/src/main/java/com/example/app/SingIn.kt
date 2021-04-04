@@ -87,18 +87,7 @@ class SingIn: AppCompatActivity() {
         }
     }
 
-    /*private fun SelecciondeFecha(){
-       val datePicker = SeleccionFecha {dia, mes, ano -> Seleccion(dia, mes, ano)}
-        datePicker.show(supportFragmentManager, "Fecha")
-    }
 
-    /*fun Seleccion(dia:Int, mes:Int, ano:Int){
-        inputdia.setText("$dia-$mes-$ano")
-    }
-
-     */
-
-     */
 
     fun Almacenamiento(elemento: String, elementos: ArrayList<String>): ArrayList<String>{
 
