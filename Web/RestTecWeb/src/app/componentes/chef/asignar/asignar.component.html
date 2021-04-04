@@ -2,6 +2,7 @@
 
 
 <div class="container col-5 mt-3">
+	<h3 class="text-center"> {{this.pedidos.length == 0 ? 'No hay pedidos disponibles' : ''}}</h3>
 	<div class="list-group">
 	  <a  class="list-group-item list-group-item-action flex-column align-items-start" *ngFor="let pedido of pedidos; let i = index">
 	  <div class="d-flex w-100 justify-content-between">
