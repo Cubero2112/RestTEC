@@ -70,7 +70,7 @@ class Main : AppCompatActivity() {
             this.finish()
         }
 
-        fun Almacenamiento(elemento: String, elementos: ArrayList<String>): ArrayList<String>{
+        /*fun Almacenamiento(elemento: String, elementos: ArrayList<String>): ArrayList<String>{
 
             if (elementos.size == 0){
                 elementos.add(elemento)
@@ -81,8 +81,8 @@ class Main : AppCompatActivity() {
                 elementos.add(posicion, elemento)
                 return elementos
             }
-        }
-        
+        }*/
+
         btnregistrarse.setOnClickListener {
             startActivity(Intent(this, SingIn::class.java))
         }
