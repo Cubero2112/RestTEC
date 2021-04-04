@@ -9,7 +9,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.DialogFragment
-
+/*
 class SeleccionFecha(val listener: (dia:Int, mes:Int, anO:Int)-> Unit): DialogFragment(),
         DatePickerDialog.OnDateSetListener {
 
@@ -30,3 +30,5 @@ class SeleccionFecha(val listener: (dia:Int, mes:Int, anO:Int)-> Unit): DialogFr
         return picker
     }
 }
+
+ */

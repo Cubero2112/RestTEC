@@ -6,7 +6,7 @@ object ServiceBuilder {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://b190896e-fa91-4345-8d28-d240d73ef5e9.mock.pstmn.io") //https or localhost
+        .baseUrl("https://localhost:44381/") //https or localhost
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()

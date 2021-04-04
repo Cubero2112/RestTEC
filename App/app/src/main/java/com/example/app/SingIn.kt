@@ -18,15 +18,21 @@ class SingIn: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.singin)
 
-        inputfechac.setOnClickListener{ SelecciondeFecha() }
+        //inputdia.setOnClickListener{ SelecciondeFecha() }
 
-        val usuario_input2 = findViewById<EditText>(R.id.inputcorreor) as EditText
+        val usuario_input2 = findViewById<EditText>(R.id.inputcorreo) as EditText
         val contrasena_input2 =  findViewById<EditText>(R.id.inputcontrasenar) as EditText
-        val name_input = findViewById<EditText>(R.id.inputnombre) as EditText
-        val Fname_input = findViewById<EditText>(R.id.inputpapellido) as EditText
+        val name_input = findViewById<EditText>(R.id.inputuser) as EditText
+        val Fname_input = findViewById<EditText>(R.id.inputpPnombre) as EditText
         val Lname_input = findViewById<EditText>(R.id.inputsapellido) as EditText
         val id_input = findViewById<EditText>(R.id.inputcedula) as EditText
-        val date_input = findViewById<EditText>(R.id.inputfechac) as EditText
+        //val date_input = findViewById<EditText>(R.id.inputfechac) as EditText
+        val dia_input = findViewById<TextView>(R.id.inputdia) as EditText
+        val mes_input = findViewById<TextView>(R.id.inputmes) as EditText
+        val anio_input = findViewById<TextView>(R.id.inputanio) as EditText
+        val provincia_input = findViewById<TextView>(R.id.inputprovincia) as EditText
+        val canton_input = findViewById<TextView>(R.id.inputcanton) as EditText
+        val distrito_input = findViewById<TextView>(R.id.inputdistrito) as EditText
         val phone_input = findViewById<EditText>(R.id.inputtelefono) as EditText
 
         btnregistrar.setOnClickListener {
@@ -34,10 +40,16 @@ class SingIn: AppCompatActivity() {
             val usuario = usuario_input2.text.toString()
             val contrasena = contrasena_input2.text.toString()
             val nombre = name_input.text.toString()
-            val p_apellido = Fname_input.text.toString()
-            val s_apellido = Lname_input.text.toString()
+            val p_nombre = Fname_input.text.toString()
+            val apellido = Lname_input.text.toString()
             val cedula = id_input.text.toString()
-            val fecha = date_input.text.toString()
+            //val fecha = date_input.text.toString()
+            val dia_nacido = dia_input.text.toString()
+            val mes_nacido = mes_input.text.toString()
+            val anio_nacido = anio_input.text.toString()
+            val provincia = provincia_input.text.toString()
+            val canton = canton_input.text.toString()
+            val distrito = distrito_input.text.toString()
             val telefono = phone_input.text.toString()
             val registro_usuario = Almacenamiento(usuario, usuarios_registrados_r)
             val registro_contrasena = Almacenamiento(contrasena, contrsenas_registradas_r)
@@ -49,13 +61,20 @@ class SingIn: AppCompatActivity() {
             val apiService = RestApiService()
             val userInfo = Users(
                     userName = nombre,
-                userFName = p_apellido,
-                userLName = s_apellido,
-                userID = cedula,
-                userDate = fecha,
-                userPhone = telefono,
-                userPassword = contrasena,
-                userEmail = usuario)
+                    userPassword = contrasena,
+                    userEmail = usuario,
+                    userID = cedula,
+                    userFName = p_nombre,
+                    userLName = apellido,
+                //userDate = fecha,
+                    userDay = dia_nacido,
+                    userMonth = mes_nacido,
+                    userAnio = anio_nacido,
+                    userProvincia = provincia,
+                    userCanton = canton,
+                    userDistrito = distrito,
+                    userPhone = telefono
+                )
 
             apiService.addUser(userInfo) {
                 if (it?.userName != null) {
@@ -68,14 +87,18 @@ class SingIn: AppCompatActivity() {
         }
     }
 
-    private fun SelecciondeFecha(){
+    /*private fun SelecciondeFecha(){
        val datePicker = SeleccionFecha {dia, mes, ano -> Seleccion(dia, mes, ano)}
         datePicker.show(supportFragmentManager, "Fecha")
     }
 
-    fun Seleccion(dia:Int, mes:Int, ano:Int){
-        inputfechac.setText("$dia-$mes-$ano")
+    /*fun Seleccion(dia:Int, mes:Int, ano:Int){
+        inputdia.setText("$dia-$mes-$ano")
     }
+
+     */
+
+     */
 
     fun Almacenamiento(elemento: String, elementos: ArrayList<String>): ArrayList<String>{
 

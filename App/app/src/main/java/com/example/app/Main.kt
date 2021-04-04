@@ -52,10 +52,17 @@ class Main : AppCompatActivity() {
                     userFName = "",
                     userLName = "",
                     userID = "",
-                    userDate = "",
+                    //userDate = "",
                     userPhone = "",
+                    userDay = "",
+                    userMonth = "",
+                    userAnio = "",
+                    userProvincia = "",
+                    userCanton = "",
+                    userDistrito = "",
                     userPassword = contrasena,
                     userEmail = usuario)
+
 
             //intent.putExtra("usuario", registro_usuario)
            // startActivity(intent)
