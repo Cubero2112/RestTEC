@@ -1,5 +1,6 @@
 package com.example.app
 
+import RestApiService
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.feedback.*
 import kotlinx.android.synthetic.main.visualizar.*
+import timber.log.Timber
 import java.security.KeyStore
 
 class Feedback : AppCompatActivity(){
@@ -35,9 +37,38 @@ class Feedback : AppCompatActivity(){
             }
 
         btnenviar.setOnClickListener {
-            //Aquí se envian los datos JSON
-            
 
-            }
+            /*val comida_selec1 = usuario_input2.text.toString()
+            val comida_selec2 = contrasena_input2.text.toString()
+            val comida_selec3 = name_input.text.toString()
+            val fecha = Fname_input.text.toString()
+            val telefono = phone_input.text.toString()
+            val correo =
+            val intent = Intent(this, Main::class.java)
+
+            intent.putExtra("usuario", registro_usuario)
+            startActivity(intent)
+
+            val apiService = RestApiService()
+            val userInfo = Seleccion(
+                    selecComida1 = nombre,
+                    selecComida2 = p_apellido,
+                    selecComida3 = s_apellido,
+                    selecDate = fecha,
+                    selecPhone = telefono,
+                    userEmail = correo)
+
+            apiService.addUser(userInfo) {
+                if (it?.userName != null) {
+                } else {
+                    Timber.d("Error registering new user")
+                }
+            }*/
+
+            this.finish()
         }
+
+
     }
+}
+

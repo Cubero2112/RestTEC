@@ -1,3 +1,4 @@
+import com.example.app.Seleccion
 import com.example.app.Users
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,4 +19,19 @@ class RestApiService {
             }
         )
     }
+
+    /*fun addPedido(seleccionData: Seleccion, onResult: (Seleccion?) -> Unit){
+        val retrofit = ServiceBuilder.buildService(RestApi::class.java)
+        retrofit.addUser(seleccionData).enqueue(
+                object : Callback<Seleccion> {
+                    override fun onFailure(call: Call<Seleccion>, t: Throwable) {
+                        onResult(null)
+                    }
+                    override fun onResponse(call: Call<Seleccion>, response: Response<Seleccion>) {
+                        val addedSeleccion = response.body()
+                        onResult(addedSeleccion)
+                    }
+                }
+        )
+    }*/
 }

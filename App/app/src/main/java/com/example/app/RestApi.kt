@@ -1,3 +1,4 @@
+import com.example.app.Seleccion
 import com.example.app.Users
 import retrofit2.Call
 import retrofit2.http.Body
@@ -9,4 +10,5 @@ interface RestApi {
         @POST("users")
         fun addUser(@Body userData: Users): Call<Users>
         fun vefiqueUser(@Body userData: Users): Call<Users>
+        fun addPedido(@Body seleccionData: Seleccion): Call<Seleccion>
 }

@@ -8,6 +8,6 @@ data class Seleccion(
         @SerializedName("comida3") val selecComida3: String?,
         @SerializedName("fecha") val selecDate: String?,
         @SerializedName("telefono") val selecPhone: String?,
-        @SerializedName("contrasena") val userPassword: String?,
+        //@SerializedName("contrasena") val userPassword: String?,
         @SerializedName("correo") val userEmail: String?
 )

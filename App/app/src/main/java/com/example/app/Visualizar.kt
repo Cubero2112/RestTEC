@@ -13,8 +13,6 @@ class Visualizar: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.visualizar)
 
-        //val intent = getIntent()
-        //val tiempo = intent.getStringExtra("preparacion")
         val cargar = Cargar(this)
         cargar.ComenzarCarga()
         val handler = Handler()
