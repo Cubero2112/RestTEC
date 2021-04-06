@@ -15,11 +15,18 @@ export class GestionMenuComponent implements OnInit {
 
   constructor(public router : Router, private dataMenu: MenuService, private dataPlatos: PlatillosService) {  }
 
+  /*Se crean listas para almacenar la info proveniente del server
+  Inicializan vacías
+  */
   public menuDelDia = [];
   public todosLosPlatos = [];
   public platosAMostrar = [];
 
   public numeroDePlatos:number;
+
+
+/*Al iniciar el componente se verifica el rol del usuario que esta loggeado
+si no hay nadie loggeado lo manda a la pagina de inicio de sesio*/
 
   ngOnInit(): void {
   	if(localStorage.getItem("rol") == "Admin"){
@@ -29,6 +36,11 @@ export class GestionMenuComponent implements OnInit {
       this.router.navigate([""]);
     }
   }
+
+  /*Metodo para obtener el menu del día alojado en el servidor
+  Hace uso de las listas anteriormente creadas
+  No retorna ningun valor, sino que llama a otro metodo*/
+
 
   obtenerMenu(){
     this.dataMenu.obtenerMenuDia()
@@ -41,6 +53,10 @@ export class GestionMenuComponent implements OnInit {
       this.obtenerTodosLosPlatos(this.menuDelDia);
     });
   }
+
+  /*Entrada: menu => una lista con el menu del día guardado en el servidor
+  Obtiene todos los platos que están disponibles, aun si no estan incluidos en el menu
+  Llama finalmente a un metodo que se encarga de mostrar los platos al usuario*/
 
   obtenerTodosLosPlatos(menu){
     this.dataPlatos.obtenerTodosPlatos()
@@ -57,6 +73,9 @@ export class GestionMenuComponent implements OnInit {
     }); 
   }
 
+  /* Entrada: menu => una lista con el menu del día guardado en el servidor
+              platos => todos los platos del sistema
+     Se encarga de sacar la interseccion entre las dos listas que recibe y muestra al usuario el resultado*/
   obtenerPlatosAMostrar(menu, platos){
 
     for (var i = 0; i < menu.length; i++) {
@@ -73,12 +92,18 @@ export class GestionMenuComponent implements OnInit {
 
   }
 
+  /*Metodo para agregar un plato al menu
+  Entrada:  codigo:number => codigo del plato que se quiere agregar*/
+
   agregarPlatoMenu(codigo:number){
     console.log(codigo);
     this.dataMenu.agregarPlatoAlMenu(codigo)
     .subscribe(response=> location.reload());
   }
 
+  /*Metodo para eliminar  un plato al menu
+  Entrada:  codigo:number => codigo del plato que se quiere agregar*/
+  
   eliminarPlato(codigo:number){
     this.dataMenu.eliminarPlatoDelMenu(codigo)
     .subscribe(response=> location.reload());
