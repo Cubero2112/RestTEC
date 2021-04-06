@@ -16,6 +16,8 @@ namespace RestTEC.Controllers
     {
         [HttpGet]
         [Route("client/getPlatillos")]
+
+        //Bajo el URL: https://localhost:44381/client/getPlatillos cualquiera registrado como client puede pedir los platillos disponibles mediante este URL
         public HttpResponseMessage GetPlatillos()
         {
             PlatilloLogic platilloBL = new PlatilloLogic();

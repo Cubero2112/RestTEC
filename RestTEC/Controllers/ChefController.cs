@@ -15,6 +15,8 @@ namespace RestTEC.Controllers
     {
         [HttpGet]
         [Route("chef/getPedidos")]
+
+        //Bajo el URL: https://localhost:44381/chef/getPedidos cualquiera registrado como chef puede obtener todos los pedidos que aun no han sido tomados por ningun chef
         public HttpResponseMessage GetPedidosNoAsignados()
         {
             PedidoLogic pedidoLogic = new PedidoLogic();
@@ -25,6 +27,8 @@ namespace RestTEC.Controllers
 
         [HttpGet]
         [Route("chef/getMisPedidos")]
+
+        //Bajo el URL: https://localhost:44381/chef/getMisPedidos cualquiera registrado como chef puede obtener todos los pedidos que este mismo se ha asignado
         public HttpResponseMessage GetMisPedidos()
         {
             PedidoLogic pedidoLogic = new PedidoLogic();
@@ -36,6 +40,8 @@ namespace RestTEC.Controllers
 
         [HttpPost]
         [Route("chef/InitPedido")]
+
+        //Bajo el URL: https://localhost:44381/chef/InitPedido cualquiera registrado como chef puede asignarse un pedido mediante este URL
         public HttpResponseMessage InitPedido([FromBody]Pedido pedidoWeb)
         {
             PedidoLogic pedidoLogic = new PedidoLogic();            
@@ -47,6 +53,8 @@ namespace RestTEC.Controllers
 
         [HttpPost]
         [Route("chef/FinishPedido")]
+
+        //Bajo el URL: https://localhost:44381/chef/FinishPedido cualquiera registrado como chef puede finalizar un pedido que este mismo haya iniciado mediante este URL 
         public HttpResponseMessage FinishPedido([FromBody] Pedido pedidoWeb)
         {
             PedidoLogic pedidoLogic = new PedidoLogic();

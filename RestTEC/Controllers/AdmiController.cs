@@ -20,7 +20,9 @@ namespace RestTEC.Controllers
     {
         [HttpGet]
         [Route("admi/getPlatillos")]
-        public HttpResponseMessage GetPlatillos()
+
+        //Bajo el URL: https://localhost:44381/admi/getPlatillos cualquiera registrado como admi puede solicitar todos los platillos disponibles en RestTEC
+        public HttpResponseMessage GetPlatillos() 
         {
             PlatilloLogic platilloBL = new PlatilloLogic();
             IEnumerable<Platillo> platillos = platilloBL.GetAll();
@@ -31,6 +33,9 @@ namespace RestTEC.Controllers
 
         [HttpPut]
         [Route("actualizarPlatillo")]
+
+        //Bajo el URL: https://localhost:44381/actualizarPlatillo cualquiera registrado como admi puede actualizar un platillo, esto, pasando el codigo 
+        // del platillo que se quiere actualizar mas toda la informacion necesario para hacer la actualizacion
         public HttpResponseMessage ActualizarPlatillo([FromBody] Platillo platillo)
         {
 
@@ -43,6 +48,9 @@ namespace RestTEC.Controllers
 
         [HttpPut]
         [Route("eliminarPlatillo")]
+
+        //Bajo el URL: https://localhost:44381/actualizarPlatillo cualquiera registrado como admi puede eliminar un platillo, esto, pasando el codigo
+        //del platillo que se quiere eliminar
         public HttpResponseMessage EliminarPlatillo([FromBody] Platillo platillo)
         {
 
@@ -55,6 +63,9 @@ namespace RestTEC.Controllers
 
         [HttpPost]
         [Route("insertPlatillo")]
+
+        //Bajo el URL: https://localhost:44381/insertPlatillo cualquiera registrado como admi puede insertar un platillo, esto, pasando el platillo 
+        //en formato JSON que quiere insertar
         public HttpResponseMessage InsertPlatillo([FromBody] Platillo platillo)
         {
             PlatilloLogic platilloBL = new PlatilloLogic();
@@ -66,6 +77,9 @@ namespace RestTEC.Controllers
 
         [HttpGet]
         [Route("getReporte")]
+
+        //Bajo el URL: https://localhost:44381/getReporte cualquiera registrado como admi puede obtener un reporte de: los platillos con mejor feedback, 
+        //los mas vendidos, los clientes mas fieles y los platillos que mas ganancias han dejado de entre los vendidos
         public HttpResponseMessage GetReporte()
         {
 
