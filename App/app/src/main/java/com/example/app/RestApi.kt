@@ -7,7 +7,7 @@ import retrofit2.http.POST
 
 interface RestApi {
         @Headers("Content-Type: application/json")
-        @POST("client")
+        @POST("users")
         fun addUser(@Body userData: Users): Call<Users>
         fun vefiqueUser(@Body userData: Users): Call<Users>
         fun addPedido(@Body seleccionData: Seleccion): Call<Seleccion>

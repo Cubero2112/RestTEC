@@ -6,7 +6,7 @@ object ServiceBuilder {
     private val client = OkHttpClient.Builder().build()
 
     private val retrofit = Retrofit.Builder()
-        .baseUrl("https://localhost:44381/registration") //https or localhost
+        .baseUrl("https://localhost:44381/") //https or localhost
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
