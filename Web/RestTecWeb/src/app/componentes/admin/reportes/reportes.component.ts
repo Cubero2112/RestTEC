@@ -22,6 +22,7 @@ export class ReportesComponent implements OnInit {
   public  reporteVendidos = [];
   public reporteGanancias = [];
   public reporteFeedback = [];
+  public reporteClientes = [];
 
   public datosAMostrar = [];
 
@@ -46,13 +47,17 @@ export class ReportesComponent implements OnInit {
       this.reporteVendidos.push({"nombre":data.PlatillosMasVendidos[i].Nombre, "valor": data.PlatillosMasVendidos[i].NumeroVentas});
     } 
 
-     for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 10; i++) {
       this.reporteGanancias.push({"nombre":data.PlatillosConMasGanancias[i].Nombre, "valor": ((data.PlatillosConMasGanancias[i].NumeroVentas as number) *  (data.PlatillosConMasGanancias[i].Precio as number))});
     } 
 
-     for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 10; i++) {
       this.reporteFeedback.push({"nombre":data.PlatillosMejorFeedBack[i].Nombre, "valor": data.PlatillosMejorFeedBack[i].Feedback});
     } 
+
+    for (var i = 0; i < 10; i++) {
+      this.reporteClientes.push({"nombre":data.ClientesMasFieles[i].Nombre + " " + data.ClientesMasFieles[i].Apellido , "valor": data.ClientesMasFieles[i].HistorialOrdenesRealizadas.length});
+    }
   }
 
   cargarVendidos():void{
@@ -77,9 +82,10 @@ export class ReportesComponent implements OnInit {
   }
 
   cargarUsuarios():void{  
-    this.datosAMostrar = [];  
+    this.datosAMostrar = this.reporteClientes;  
     this.encabezado_1 = "Usuarios";
     this.encabezado_2 = "Ventas";
+    console.log(this.reporteClientes);
 
     
   }

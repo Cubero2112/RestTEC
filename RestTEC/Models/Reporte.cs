@@ -65,6 +65,14 @@ namespace RestTEC.Models
                 ClienteBL clienteBL = new ClienteBL();
                 List<Cliente> clients = clienteBL.GetAll();
 
+                for (int i = 0; i < clients.Count; i++)
+                {
+                    if (clients[i].HistorialOrdenesRealizadas == null)
+                    {
+                        clients[i].HistorialOrdenesRealizadas = new int[] { };
+                    }
+                }
+
 
                 //---------- Ordena los clientes del que tenga mas a el que tenga menos compras
                 clients.Sort((x, y) => (y.HistorialOrdenesRealizadas.Length).CompareTo(x.HistorialOrdenesRealizadas.Length));
