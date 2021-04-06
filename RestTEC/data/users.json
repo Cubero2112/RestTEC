@@ -28,5 +28,77 @@
     "Password": "contraVientoMarea",
     "Roles": "Client",
     "Email": "josuecub.mont@hotmail.com"
+  },
+  {
+    "UserName": "Apu1398",
+    "Password": "elPassword",
+    "Roles": "Client",
+    "Email": "josepablofa@gmail.com"
+  },
+  {
+    "UserName": "Esteban2332",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Juan11",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "imRoberto",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Julian88",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Joseph56",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Daniel1221",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Alma33",
+    "Password": "soul1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Isaac",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "ElAlfa00",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Sierra3",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
+  },
+  {
+    "UserName": "Vilma998",
+    "Password": "1234",
+    "Roles": "Client",
+    "Email": "esteban.morales@gmail.com"
   }
 ]

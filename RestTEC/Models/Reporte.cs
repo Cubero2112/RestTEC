@@ -61,8 +61,22 @@ namespace RestTEC.Models
                     reporte.PlatillosMejorFeedBack.Add(platillos[i]);
                 }
 
-                reporte.ClientesMasFieles.Add(new Cliente() { Nombre = "Cliente Fiel" });
 
+                ClienteBL clienteBL = new ClienteBL();
+                List<Cliente> clients = clienteBL.GetAll();
+
+
+                //---------- Ordena los clientes del que tenga mas a el que tenga menos compras
+                clients.Sort((x, y) => (y.HistorialOrdenesRealizadas.Length).CompareTo(x.HistorialOrdenesRealizadas.Length));
+                //---------- Ordena los clientes del que tenga mas a el que tenga menos compras
+
+
+                for (int i = 0; i < 10; i++)
+                {
+
+                    reporte.ClientesMasFieles.Add(clients[i]);
+                }
+                
                 return reporte;
             }
             

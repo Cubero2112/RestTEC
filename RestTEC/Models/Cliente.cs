@@ -39,7 +39,7 @@ namespace RestTEC.Models
 
             return clientsList;
         }
-        public IEnumerable<Cliente> GetAll()
+        public List<Cliente> GetAll()
         {
             //(Read) GET            
             return DataSource();
